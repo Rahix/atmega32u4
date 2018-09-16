@@ -1,6 +1,6 @@
 [package]
 authors = ["Rahix <rahix@rahix.de>"]
-name = "arduino_leonardo"
+name = "arduino-leonardo"
 version = "0.1.0"
 
 [dependencies]
