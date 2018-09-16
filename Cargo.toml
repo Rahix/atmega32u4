@@ -1,0 +1,8 @@
+[package]
+authors = ["Rahix <rahix@rahix.de>"]
+name = "arduino_leonardo"
+version = "0.1.0"
+
+[dependencies]
+bare-metal = "0.2.3"
+vcell = "0.1.0"
