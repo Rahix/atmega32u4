@@ -1,9 +1,9 @@
 #!/bin/sh
 set -xe
 
-./gen-svd.py > _leonardo.svd
-svd2rust --target none -i _leonardo.svd >lib.rs
-rm _leonardo.svd
+./gen-svd.py > _.svd
+svd2rust --target none -i _.svd >lib.rs
+rm _.svd
 rm -r src/
 form -i lib.rs -o src/
 rm lib.rs

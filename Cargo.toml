@@ -1,6 +1,6 @@
 [package]
 authors = ["Rahix <rahix@rahix.de>"]
-name = "arduino-leonardo"
+name = "atmega32u4"
 version = "0.1.0"
 
 [dependencies]

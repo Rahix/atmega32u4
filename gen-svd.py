@@ -54,7 +54,7 @@ def main():
 
   <peripherals>""")
 
-    data = json.load(open("leonardo.json"))
+    data = json.load(open("atmega32u4.json"))
 
     for peripheral in data:
         ty = peripheral["type"]
@@ -106,7 +106,6 @@ def main():
         <register>
           <name>PORT</name>
           <description>{doc_name} Output</description>
-          <access>write-only</access>
           <addressOffset>0x02</addressOffset>""")
             bit_fields(
                 doc="Output",
