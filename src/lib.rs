@@ -61,6 +61,44 @@ impl Deref for PORTD {
 }
 #[doc = "PORTD"]
 pub mod portd;
+#[doc = "PORTE"]
+pub struct PORTE {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for PORTE {}
+impl PORTE {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const porte::RegisterBlock {
+        44 as *const _
+    }
+}
+impl Deref for PORTE {
+    type Target = porte::RegisterBlock;
+    fn deref(&self) -> &porte::RegisterBlock {
+        unsafe { &*PORTE::ptr() }
+    }
+}
+#[doc = "PORTE"]
+pub mod porte;
+#[doc = "PORTF"]
+pub struct PORTF {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for PORTF {}
+impl PORTF {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const portf::RegisterBlock {
+        47 as *const _
+    }
+}
+impl Deref for PORTF {
+    type Target = portf::RegisterBlock;
+    fn deref(&self) -> &portf::RegisterBlock {
+        unsafe { &*PORTF::ptr() }
+    }
+}
+#[doc = "PORTF"]
+pub mod portf;
 #[allow(private_no_mangle_statics)]
 #[no_mangle]
 static mut DEVICE_PERIPHERALS: bool = false;
@@ -73,6 +111,10 @@ pub struct Peripherals {
     pub PORTC: PORTC,
     #[doc = "PORTD"]
     pub PORTD: PORTD,
+    #[doc = "PORTE"]
+    pub PORTE: PORTE,
+    #[doc = "PORTF"]
+    pub PORTF: PORTF,
 }
 impl Peripherals {
     #[doc = r" Unchecked version of `Peripherals::take`"]
@@ -83,6 +125,8 @@ impl Peripherals {
             PORTB: PORTB { _marker: PhantomData },
             PORTC: PORTC { _marker: PhantomData },
             PORTD: PORTD { _marker: PhantomData },
+            PORTE: PORTE { _marker: PhantomData },
+            PORTF: PORTF { _marker: PhantomData },
         }
     }
 }

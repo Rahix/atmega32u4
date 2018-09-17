@@ -16,5 +16,17 @@
         "name": "PORTD",
         "doc_name": "Port D",
         "base": "0x29"
+    },
+    {
+        "type": "port",
+        "name": "PORTE",
+        "doc_name": "Port E",
+        "base": "0x2C"
+    },
+    {
+        "type": "port",
+        "name": "PORTF",
+        "doc_name": "Port F",
+        "base": "0x2F"
     }
 ]
