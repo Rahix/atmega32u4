@@ -1,4 +1,11 @@
-# ! [ doc = "Peripheral access API for ARDUINO_LEONARDO microcontrollers (generated using svd2rust v0.13.1)\n\nYou can find an overview of the API [here].\n\n[here]: https://docs.rs/svd2rust/0.13.1/svd2rust/#peripheral-api" ] # ! [ deny ( missing_docs ) ]  # ! [ allow ( non_camel_case_types ) ] # ! [ no_std ] # ! [ feature ( const_fn ) ] # ! [ feature ( try_from ) ]extern crate bare_metal ;
+#![ doc = "Peripheral access API for ARDUINO_LEONARDO microcontrollers (generated using svd2rust v0.13.1)\n\nYou can find an overview of the API [here].\n\n[here]: https://docs.rs/svd2rust/0.13.1/svd2rust/#peripheral-api" ]
+#![ deny ( missing_docs ) ]
+#![ allow ( non_camel_case_types ) ]
+#![ no_std ]
+#![ feature ( const_fn ) ]
+#![ feature ( try_from ) ]
+#![feature(asm)]
+
 extern crate vcell ;
 use core::ops::Deref;
 use core::marker::PhantomData;
@@ -117,6 +124,33 @@ pub struct Peripherals {
     pub PORTF: PORTF,
 }
 impl Peripherals {
+    #[doc = r" Returns all the peripherals *once*"]
+    #[inline]
+    #[allow(unused_assignments)]
+    pub fn take() -> Option<Self> {
+        let mut sreg: u8 = 0;
+        unsafe { asm!(
+            "in $0,0x35\n\tcli"
+            : "=r"(sreg)
+            :
+            :
+            : "volatile"
+        ); }
+        let result = if unsafe { DEVICE_PERIPHERALS } {
+            None
+        } else {
+            Some(unsafe { Peripherals::steal() })
+        };
+        unsafe { asm!(
+            "out 0x35,$0"
+            :
+            : "r"(sreg)
+            :
+            : "volatile"
+        ); }
+        result
+    }
+
     #[doc = r" Unchecked version of `Peripherals::take`"]
     pub unsafe fn steal() -> Self {
         debug_assert!(!DEVICE_PERIPHERALS);
