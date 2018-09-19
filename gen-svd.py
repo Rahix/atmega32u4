@@ -31,13 +31,13 @@ def main():
 <?xml version="1.0" encoding="utf-8"?>
 
 <device schemaVersion="1.3" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD.xsd">
-  <vendor>Arduino LLC</vendor>
-  <name>Arduino_Leonardo</name>
+  <vendor>Atmel</vendor>
+  <name>ATmega32U4</name>
   <version>0.1</version>
-  <description>Arduino Leonardo</description>
+  <description>8-bit Microcontroller with 32K bytes of ISP Flash and USB Controller</description>
 
   <cpu>
-    <name>Atmega32u4</name>
+    <name>ATmega32U4</name>
     <revision>r0p0</revision>
     <endian>little</endian>
     <mpuPresent>false</mpuPresent>

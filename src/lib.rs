@@ -16,7 +16,6 @@ pub use peripherals::*;
 impl Peripherals {
     #[doc = r" Returns all the peripherals *once*"]
     #[inline]
-    #[allow(unused_assignments)]
     pub fn take() -> Option<Self> {
         interrupt::free(|_| if unsafe { DEVICE_PERIPHERALS } {
             None
