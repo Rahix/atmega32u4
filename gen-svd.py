@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 import json
 
-def bit_fields(*, doc, one, onedoc, zero, zerodoc):
+def bit_fields(bits, *, doc, one, onedoc, zero, zerodoc):
     print(f"""\
           <fields>""")
-    for i in range(8):
+    for i in bits:
         print(f"""\
             <field>
               <name>P{i}</name>
@@ -62,6 +62,7 @@ def main():
         doc_name = peripheral["doc_name"]
         base_addr = peripheral["base"]
         if ty == "port":
+            bits = peripheral["pins"]
             print(f"""\
     <peripheral>
       <name>{name}</name>
@@ -80,6 +81,7 @@ def main():
           <access>read-only</access>
           <addressOffset>0x00</addressOffset>""")
             bit_fields(
+                bits,
                 doc="Input",
                 one="HIGH",
                 onedoc="Pin is high",
@@ -94,6 +96,7 @@ def main():
           <description>{doc_name} Direction</description>
           <addressOffset>0x01</addressOffset>""")
             bit_fields(
+                bits,
                 doc="Direction",
                 one="OUTPUT",
                 onedoc="Pin is configured as an output",
@@ -108,6 +111,7 @@ def main():
           <description>{doc_name} Output</description>
           <addressOffset>0x02</addressOffset>""")
             bit_fields(
+                bits,
                 doc="Output",
                 one="HIGH",
                 onedoc="Pin is high",

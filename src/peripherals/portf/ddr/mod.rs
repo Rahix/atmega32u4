@@ -134,100 +134,6 @@ impl P1R {
         *self == P1R::OUTPUT
     }
 }
-#[doc = "Possible values of the field `P2`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum P2R {
-    #[doc = "Pin is configured as an input"]
-    INPUT,
-    #[doc = "Pin is configured as an output"]
-    OUTPUT,
-}
-impl P2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            P2R::INPUT => false,
-            P2R::OUTPUT => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> P2R {
-        match value {
-            false => P2R::INPUT,
-            true => P2R::OUTPUT,
-        }
-    }
-    #[doc = "Checks if the value of the field is `INPUT`"]
-    #[inline]
-    pub fn is_input(&self) -> bool {
-        *self == P2R::INPUT
-    }
-    #[doc = "Checks if the value of the field is `OUTPUT`"]
-    #[inline]
-    pub fn is_output(&self) -> bool {
-        *self == P2R::OUTPUT
-    }
-}
-#[doc = "Possible values of the field `P3`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum P3R {
-    #[doc = "Pin is configured as an input"]
-    INPUT,
-    #[doc = "Pin is configured as an output"]
-    OUTPUT,
-}
-impl P3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            P3R::INPUT => false,
-            P3R::OUTPUT => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> P3R {
-        match value {
-            false => P3R::INPUT,
-            true => P3R::OUTPUT,
-        }
-    }
-    #[doc = "Checks if the value of the field is `INPUT`"]
-    #[inline]
-    pub fn is_input(&self) -> bool {
-        *self == P3R::INPUT
-    }
-    #[doc = "Checks if the value of the field is `OUTPUT`"]
-    #[inline]
-    pub fn is_output(&self) -> bool {
-        *self == P3R::OUTPUT
-    }
-}
 #[doc = "Possible values of the field `P4`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum P4R {
@@ -532,122 +438,6 @@ impl<'a> _P1W<'a> {
         self.w
     }
 }
-#[doc = "Values that can be written to the field `P2`"]
-pub enum P2W {
-    #[doc = "Pin is configured as an input"]
-    INPUT,
-    #[doc = "Pin is configured as an output"]
-    OUTPUT,
-}
-impl P2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            P2W::INPUT => false,
-            P2W::OUTPUT => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _P2W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _P2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: P2W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Pin is configured as an input"]
-    #[inline]
-    pub fn input(self) -> &'a mut W {
-        self.variant(P2W::INPUT)
-    }
-    #[doc = "Pin is configured as an output"]
-    #[inline]
-    pub fn output(self) -> &'a mut W {
-        self.variant(P2W::OUTPUT)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `P3`"]
-pub enum P3W {
-    #[doc = "Pin is configured as an input"]
-    INPUT,
-    #[doc = "Pin is configured as an output"]
-    OUTPUT,
-}
-impl P3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            P3W::INPUT => false,
-            P3W::OUTPUT => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _P3W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _P3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: P3W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Pin is configured as an input"]
-    #[inline]
-    pub fn input(self) -> &'a mut W {
-        self.variant(P3W::INPUT)
-    }
-    #[doc = "Pin is configured as an output"]
-    #[inline]
-    pub fn output(self) -> &'a mut W {
-        self.variant(P3W::OUTPUT)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
-        self.w
-    }
-}
 #[doc = "Values that can be written to the field `P4`"]
 pub enum P4W {
     #[doc = "Pin is configured as an input"]
@@ -904,24 +694,6 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u8) != 0
         })
     }
-    #[doc = "Bit 2 - Pin 2 Direction"]
-    #[inline]
-    pub fn p2(&self) -> P2R {
-        P2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
-    }
-    #[doc = "Bit 3 - Pin 3 Direction"]
-    #[inline]
-    pub fn p3(&self) -> P3R {
-        P3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
-    }
     #[doc = "Bit 4 - Pin 4 Direction"]
     #[inline]
     pub fn p4(&self) -> P4R {
@@ -980,16 +752,6 @@ impl W {
     #[inline]
     pub fn p1(&mut self) -> _P1W {
         _P1W { w: self }
-    }
-    #[doc = "Bit 2 - Pin 2 Direction"]
-    #[inline]
-    pub fn p2(&mut self) -> _P2W {
-        _P2W { w: self }
-    }
-    #[doc = "Bit 3 - Pin 3 Direction"]
-    #[inline]
-    pub fn p3(&mut self) -> _P3W {
-        _P3W { w: self }
     }
     #[doc = "Bit 4 - Pin 4 Direction"]
     #[inline]

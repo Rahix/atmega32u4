@@ -3,30 +3,35 @@
         "type": "port",
         "name": "PORTB",
         "doc_name": "Port B",
-        "base": "0x23"
+        "base": "0x23",
+        "pins": [0, 1, 2, 3, 4, 5, 6, 7]
     },
     {
         "type": "port",
         "name": "PORTC",
         "doc_name": "Port C",
-        "base": "0x26"
+        "base": "0x26",
+        "pins": [6, 7]
     },
     {
         "type": "port",
         "name": "PORTD",
         "doc_name": "Port D",
-        "base": "0x29"
+        "base": "0x29",
+        "pins": [0, 1, 2, 3, 4, 5, 6, 7]
     },
     {
         "type": "port",
         "name": "PORTE",
         "doc_name": "Port E",
-        "base": "0x2C"
+        "base": "0x2C",
+        "pins": [2, 6]
     },
     {
         "type": "port",
         "name": "PORTF",
         "doc_name": "Port F",
-        "base": "0x2F"
+        "base": "0x2F",
+        "pins": [0, 1, 4, 5, 6, 7]
     }
 ]
