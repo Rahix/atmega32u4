@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 import json
 
-def bit_fields(bits, *, doc, one, onedoc, zero, zerodoc):
+def bit_fields(name, bits, *, doc, one, onedoc, zero, zerodoc):
     print(f"""\
           <fields>""")
     for i in bits:
         print(f"""\
             <field>
-              <name>P{i}</name>
+              <name>{name}{i}</name>
               <description>Pin {i} {doc}</description>
               <bitRange>[{i}:{i}]</bitRange>
               <enumeratedValues>
@@ -62,6 +62,7 @@ def main():
         doc_name = peripheral["doc_name"]
         base_addr = peripheral["base"]
         if ty == "port":
+            char = peripheral["chr"]
             bits = peripheral["pins"]
             print(f"""\
     <peripheral>
@@ -81,6 +82,7 @@ def main():
           <access>read-only</access>
           <addressOffset>0x00</addressOffset>""")
             bit_fields(
+                f"PIN{char}",
                 bits,
                 doc="Input",
                 one="HIGH",
@@ -96,6 +98,7 @@ def main():
           <description>{doc_name} Direction</description>
           <addressOffset>0x01</addressOffset>""")
             bit_fields(
+                f"DD{char}",
                 bits,
                 doc="Direction",
                 one="OUTPUT",
@@ -111,6 +114,7 @@ def main():
           <description>{doc_name} Output</description>
           <addressOffset>0x02</addressOffset>""")
             bit_fields(
+                f"PORT{char}",
                 bits,
                 doc="Output",
                 one="HIGH",
