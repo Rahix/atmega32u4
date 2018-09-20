@@ -42,5 +42,9 @@
     {
         "type": "toml",
         "path": "svd/timer0.toml"
+    },
+    {
+        "type": "toml",
+        "path": "svd/timer1.toml"
     }
 ]
