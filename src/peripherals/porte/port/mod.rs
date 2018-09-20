@@ -40,15 +40,15 @@ impl super::PORT {
         self.write(|w| w)
     }
 }
-#[doc = "Possible values of the field `PORTE6`"]
+#[doc = "Possible values of the field `D6`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PORTE6R {
+pub enum D6R {
     #[doc = "Pin is low"]
     LOW,
     #[doc = "Pin is high"]
     HIGH,
 }
-impl PORTE6R {
+impl D6R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -63,39 +63,39 @@ impl PORTE6R {
     #[inline]
     pub fn bit(&self) -> bool {
         match *self {
-            PORTE6R::LOW => false,
-            PORTE6R::HIGH => true,
+            D6R::LOW => false,
+            D6R::HIGH => true,
         }
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
-    pub fn _from(value: bool) -> PORTE6R {
+    pub fn _from(value: bool) -> D6R {
         match value {
-            false => PORTE6R::LOW,
-            true => PORTE6R::HIGH,
+            false => D6R::LOW,
+            true => D6R::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline]
     pub fn is_low(&self) -> bool {
-        *self == PORTE6R::LOW
+        *self == D6R::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline]
     pub fn is_high(&self) -> bool {
-        *self == PORTE6R::HIGH
+        *self == D6R::HIGH
     }
 }
-#[doc = "Possible values of the field `PORTE2`"]
+#[doc = "Possible values of the field `D2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PORTE2R {
+pub enum D2R {
     #[doc = "Pin is low"]
     LOW,
     #[doc = "Pin is high"]
     HIGH,
 }
-impl PORTE2R {
+impl D2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -110,56 +110,56 @@ impl PORTE2R {
     #[inline]
     pub fn bit(&self) -> bool {
         match *self {
-            PORTE2R::LOW => false,
-            PORTE2R::HIGH => true,
+            D2R::LOW => false,
+            D2R::HIGH => true,
         }
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
-    pub fn _from(value: bool) -> PORTE2R {
+    pub fn _from(value: bool) -> D2R {
         match value {
-            false => PORTE2R::LOW,
-            true => PORTE2R::HIGH,
+            false => D2R::LOW,
+            true => D2R::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline]
     pub fn is_low(&self) -> bool {
-        *self == PORTE2R::LOW
+        *self == D2R::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline]
     pub fn is_high(&self) -> bool {
-        *self == PORTE2R::HIGH
+        *self == D2R::HIGH
     }
 }
-#[doc = "Values that can be written to the field `PORTE6`"]
-pub enum PORTE6W {
+#[doc = "Values that can be written to the field `D6`"]
+pub enum D6W {
     #[doc = "Pin is low"]
     LOW,
     #[doc = "Pin is high"]
     HIGH,
 }
-impl PORTE6W {
+impl D6W {
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
-            PORTE6W::LOW => false,
-            PORTE6W::HIGH => true,
+            D6W::LOW => false,
+            D6W::HIGH => true,
         }
     }
 }
 #[doc = r" Proxy"]
-pub struct _PORTE6W<'a> {
+pub struct _D6W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PORTE6W<'a> {
+impl<'a> _D6W<'a> {
     #[doc = r" Writes `variant` to the field"]
     #[inline]
-    pub fn variant(self, variant: PORTE6W) -> &'a mut W {
+    pub fn variant(self, variant: D6W) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
@@ -167,12 +167,12 @@ impl<'a> _PORTE6W<'a> {
     #[doc = "Pin is low"]
     #[inline]
     pub fn low(self) -> &'a mut W {
-        self.variant(PORTE6W::LOW)
+        self.variant(D6W::LOW)
     }
     #[doc = "Pin is high"]
     #[inline]
     pub fn high(self) -> &'a mut W {
-        self.variant(PORTE6W::HIGH)
+        self.variant(D6W::HIGH)
     }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
@@ -192,32 +192,32 @@ impl<'a> _PORTE6W<'a> {
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PORTE2`"]
-pub enum PORTE2W {
+#[doc = "Values that can be written to the field `D2`"]
+pub enum D2W {
     #[doc = "Pin is low"]
     LOW,
     #[doc = "Pin is high"]
     HIGH,
 }
-impl PORTE2W {
+impl D2W {
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
-            PORTE2W::LOW => false,
-            PORTE2W::HIGH => true,
+            D2W::LOW => false,
+            D2W::HIGH => true,
         }
     }
 }
 #[doc = r" Proxy"]
-pub struct _PORTE2W<'a> {
+pub struct _D2W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PORTE2W<'a> {
+impl<'a> _D2W<'a> {
     #[doc = r" Writes `variant` to the field"]
     #[inline]
-    pub fn variant(self, variant: PORTE2W) -> &'a mut W {
+    pub fn variant(self, variant: D2W) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
@@ -225,12 +225,12 @@ impl<'a> _PORTE2W<'a> {
     #[doc = "Pin is low"]
     #[inline]
     pub fn low(self) -> &'a mut W {
-        self.variant(PORTE2W::LOW)
+        self.variant(D2W::LOW)
     }
     #[doc = "Pin is high"]
     #[inline]
     pub fn high(self) -> &'a mut W {
-        self.variant(PORTE2W::HIGH)
+        self.variant(D2W::HIGH)
     }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
@@ -256,19 +256,19 @@ impl R {
     pub fn bits(&self) -> u8 {
         self.bits
     }
-    #[doc = "Bit 6 - Pin 6 Output"]
+    #[doc = "Bit 6 - Pin 6 Output/Data"]
     #[inline]
-    pub fn porte6(&self) -> PORTE6R {
-        PORTE6R::_from({
+    pub fn d6(&self) -> D6R {
+        D6R::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 6;
             ((self.bits >> OFFSET) & MASK as u8) != 0
         })
     }
-    #[doc = "Bit 2 - Pin 2 Output"]
+    #[doc = "Bit 2 - Pin 2 Output/Data"]
     #[inline]
-    pub fn porte2(&self) -> PORTE2R {
-        PORTE2R::_from({
+    pub fn d2(&self) -> D2R {
+        D2R::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 2;
             ((self.bits >> OFFSET) & MASK as u8) != 0
@@ -287,14 +287,14 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 6 - Pin 6 Output"]
+    #[doc = "Bit 6 - Pin 6 Output/Data"]
     #[inline]
-    pub fn porte6(&mut self) -> _PORTE6W {
-        _PORTE6W { w: self }
+    pub fn d6(&mut self) -> _D6W {
+        _D6W { w: self }
     }
-    #[doc = "Bit 2 - Pin 2 Output"]
+    #[doc = "Bit 2 - Pin 2 Output/Data"]
     #[inline]
-    pub fn porte2(&mut self) -> _PORTE2W {
-        _PORTE2W { w: self }
+    pub fn d2(&mut self) -> _D2W {
+        _D2W { w: self }
     }
 }

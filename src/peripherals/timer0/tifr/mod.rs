@@ -6,7 +6,7 @@ pub struct R {
 pub struct W {
     bits: u8,
 }
-impl super::TCCR0B {
+impl super::TIFR {
     #[doc = r" Modifies the contents of the register"]
     #[inline]
     pub fn modify<F>(&self, f: F)
@@ -41,10 +41,10 @@ impl super::TCCR0B {
     }
 }
 #[doc = r" Value of the field"]
-pub struct WGM02R {
+pub struct OCF_BR {
     bits: bool,
 }
-impl WGM02R {
+impl OCF_BR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bit(&self) -> bool {
@@ -62,21 +62,52 @@ impl WGM02R {
     }
 }
 #[doc = r" Value of the field"]
-pub struct CS0R {
-    bits: u8,
+pub struct OCF_AR {
+    bits: bool,
 }
-impl CS0R {
+impl OCF_AR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
-    pub fn bits(&self) -> u8 {
+    pub fn bit(&self) -> bool {
         self.bits
     }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct TOVR {
+    bits: bool,
+}
+impl TOVR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
 }
 #[doc = r" Proxy"]
-pub struct _FOC0AW<'a> {
+pub struct _OCF_BW<'a> {
     w: &'a mut W,
 }
-impl<'a> _FOC0AW<'a> {
+impl<'a> _OCF_BW<'a> {
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -89,17 +120,17 @@ impl<'a> _FOC0AW<'a> {
     #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
-        const OFFSET: u8 = 7;
+        const OFFSET: u8 = 2;
         self.w.bits &= !((MASK as u8) << OFFSET);
         self.w.bits |= ((value & MASK) as u8) << OFFSET;
         self.w
     }
 }
 #[doc = r" Proxy"]
-pub struct _FOC0BW<'a> {
+pub struct _OCF_AW<'a> {
     w: &'a mut W,
 }
-impl<'a> _FOC0BW<'a> {
+impl<'a> _OCF_AW<'a> {
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -112,17 +143,17 @@ impl<'a> _FOC0BW<'a> {
     #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
-        const OFFSET: u8 = 6;
+        const OFFSET: u8 = 1;
         self.w.bits &= !((MASK as u8) << OFFSET);
         self.w.bits |= ((value & MASK) as u8) << OFFSET;
         self.w
     }
 }
 #[doc = r" Proxy"]
-pub struct _WGM02W<'a> {
+pub struct _TOVW<'a> {
     w: &'a mut W,
 }
-impl<'a> _WGM02W<'a> {
+impl<'a> _TOVW<'a> {
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -135,21 +166,6 @@ impl<'a> _WGM02W<'a> {
     #[inline]
     pub fn bit(self, value: bool) -> &'a mut W {
         const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CS0W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CS0W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
         const OFFSET: u8 = 0;
         self.w.bits &= !((MASK as u8) << OFFSET);
         self.w.bits |= ((value & MASK) as u8) << OFFSET;
@@ -162,25 +178,35 @@ impl R {
     pub fn bits(&self) -> u8 {
         self.bits
     }
-    #[doc = "Bit 3 - Waveform Generation Mode"]
+    #[doc = "Bit 2 - Output Compare B Match Flag"]
     #[inline]
-    pub fn wgm02(&self) -> WGM02R {
+    pub fn ocf_b(&self) -> OCF_BR {
         let bits = {
             const MASK: bool = true;
-            const OFFSET: u8 = 3;
+            const OFFSET: u8 = 2;
             ((self.bits >> OFFSET) & MASK as u8) != 0
         };
-        WGM02R { bits }
+        OCF_BR { bits }
     }
-    #[doc = "Bits 0:2 - Clock Select"]
+    #[doc = "Bit 1 - Output Compare A Match Flag"]
     #[inline]
-    pub fn cs0(&self) -> CS0R {
+    pub fn ocf_a(&self) -> OCF_AR {
         let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u8) as u8
+            const MASK: bool = true;
+            const OFFSET: u8 = 1;
+            ((self.bits >> OFFSET) & MASK as u8) != 0
         };
-        CS0R { bits }
+        OCF_AR { bits }
+    }
+    #[doc = "Bit 0 - Timer Overflow Flag"]
+    #[inline]
+    pub fn tov(&self) -> TOVR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 0;
+            ((self.bits >> OFFSET) & MASK as u8) != 0
+        };
+        TOVR { bits }
     }
 }
 impl W {
@@ -195,24 +221,19 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 7 - Force Output Compare A"]
+    #[doc = "Bit 2 - Output Compare B Match Flag"]
     #[inline]
-    pub fn foc0a(&mut self) -> _FOC0AW {
-        _FOC0AW { w: self }
+    pub fn ocf_b(&mut self) -> _OCF_BW {
+        _OCF_BW { w: self }
     }
-    #[doc = "Bit 6 - Force Output Compare B"]
+    #[doc = "Bit 1 - Output Compare A Match Flag"]
     #[inline]
-    pub fn foc0b(&mut self) -> _FOC0BW {
-        _FOC0BW { w: self }
+    pub fn ocf_a(&mut self) -> _OCF_AW {
+        _OCF_AW { w: self }
     }
-    #[doc = "Bit 3 - Waveform Generation Mode"]
+    #[doc = "Bit 0 - Timer Overflow Flag"]
     #[inline]
-    pub fn wgm02(&mut self) -> _WGM02W {
-        _WGM02W { w: self }
-    }
-    #[doc = "Bits 0:2 - Clock Select"]
-    #[inline]
-    pub fn cs0(&mut self) -> _CS0W {
-        _CS0W { w: self }
+    pub fn tov(&mut self) -> _TOVW {
+        _TOVW { w: self }
     }
 }

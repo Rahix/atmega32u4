@@ -6,7 +6,7 @@ pub struct R {
 pub struct W {
     bits: u8,
 }
-impl super::TIFR0 {
+impl super::TIFR {
     #[doc = r" Modifies the contents of the register"]
     #[inline]
     pub fn modify<F>(&self, f: F)
@@ -41,10 +41,10 @@ impl super::TIFR0 {
     }
 }
 #[doc = r" Value of the field"]
-pub struct OCF0BR {
+pub struct ICFR {
     bits: bool,
 }
-impl OCF0BR {
+impl ICFR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bit(&self) -> bool {
@@ -62,10 +62,10 @@ impl OCF0BR {
     }
 }
 #[doc = r" Value of the field"]
-pub struct OCF0AR {
+pub struct OCF_CR {
     bits: bool,
 }
-impl OCF0AR {
+impl OCF_CR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bit(&self) -> bool {
@@ -83,10 +83,52 @@ impl OCF0AR {
     }
 }
 #[doc = r" Value of the field"]
-pub struct TOV0R {
+pub struct OCF_BR {
     bits: bool,
 }
-impl TOV0R {
+impl OCF_BR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct OCF_AR {
+    bits: bool,
+}
+impl OCF_AR {
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        self.bits
+    }
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+}
+#[doc = r" Value of the field"]
+pub struct TOVR {
+    bits: bool,
+}
+impl TOVR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bit(&self) -> bool {
@@ -104,10 +146,56 @@ impl TOV0R {
     }
 }
 #[doc = r" Proxy"]
-pub struct _OCF0BW<'a> {
+pub struct _ICFW<'a> {
     w: &'a mut W,
 }
-impl<'a> _OCF0BW<'a> {
+impl<'a> _ICFW<'a> {
+    #[doc = r" Sets the field bit"]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r" Clears the field bit"]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r" Writes raw bits to the field"]
+    #[inline]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        const MASK: bool = true;
+        const OFFSET: u8 = 5;
+        self.w.bits &= !((MASK as u8) << OFFSET);
+        self.w.bits |= ((value & MASK) as u8) << OFFSET;
+        self.w
+    }
+}
+#[doc = r" Proxy"]
+pub struct _OCF_CW<'a> {
+    w: &'a mut W,
+}
+impl<'a> _OCF_CW<'a> {
+    #[doc = r" Sets the field bit"]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r" Clears the field bit"]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r" Writes raw bits to the field"]
+    #[inline]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        const MASK: bool = true;
+        const OFFSET: u8 = 3;
+        self.w.bits &= !((MASK as u8) << OFFSET);
+        self.w.bits |= ((value & MASK) as u8) << OFFSET;
+        self.w
+    }
+}
+#[doc = r" Proxy"]
+pub struct _OCF_BW<'a> {
+    w: &'a mut W,
+}
+impl<'a> _OCF_BW<'a> {
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -127,10 +215,10 @@ impl<'a> _OCF0BW<'a> {
     }
 }
 #[doc = r" Proxy"]
-pub struct _OCF0AW<'a> {
+pub struct _OCF_AW<'a> {
     w: &'a mut W,
 }
-impl<'a> _OCF0AW<'a> {
+impl<'a> _OCF_AW<'a> {
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -150,10 +238,10 @@ impl<'a> _OCF0AW<'a> {
     }
 }
 #[doc = r" Proxy"]
-pub struct _TOV0W<'a> {
+pub struct _TOVW<'a> {
     w: &'a mut W,
 }
-impl<'a> _TOV0W<'a> {
+impl<'a> _TOVW<'a> {
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -178,35 +266,55 @@ impl R {
     pub fn bits(&self) -> u8 {
         self.bits
     }
+    #[doc = "Bit 5 - Input Capture Flag"]
+    #[inline]
+    pub fn icf(&self) -> ICFR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 5;
+            ((self.bits >> OFFSET) & MASK as u8) != 0
+        };
+        ICFR { bits }
+    }
+    #[doc = "Bit 3 - Output Compare C Match Flag"]
+    #[inline]
+    pub fn ocf_c(&self) -> OCF_CR {
+        let bits = {
+            const MASK: bool = true;
+            const OFFSET: u8 = 3;
+            ((self.bits >> OFFSET) & MASK as u8) != 0
+        };
+        OCF_CR { bits }
+    }
     #[doc = "Bit 2 - Output Compare B Match Flag"]
     #[inline]
-    pub fn ocf0b(&self) -> OCF0BR {
+    pub fn ocf_b(&self) -> OCF_BR {
         let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 2;
             ((self.bits >> OFFSET) & MASK as u8) != 0
         };
-        OCF0BR { bits }
+        OCF_BR { bits }
     }
     #[doc = "Bit 1 - Output Compare A Match Flag"]
     #[inline]
-    pub fn ocf0a(&self) -> OCF0AR {
+    pub fn ocf_a(&self) -> OCF_AR {
         let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 1;
             ((self.bits >> OFFSET) & MASK as u8) != 0
         };
-        OCF0AR { bits }
+        OCF_AR { bits }
     }
     #[doc = "Bit 0 - Timer Overflow Flag"]
     #[inline]
-    pub fn tov0(&self) -> TOV0R {
+    pub fn tov(&self) -> TOVR {
         let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 0;
             ((self.bits >> OFFSET) & MASK as u8) != 0
         };
-        TOV0R { bits }
+        TOVR { bits }
     }
 }
 impl W {
@@ -221,19 +329,29 @@ impl W {
         self.bits = bits;
         self
     }
+    #[doc = "Bit 5 - Input Capture Flag"]
+    #[inline]
+    pub fn icf(&mut self) -> _ICFW {
+        _ICFW { w: self }
+    }
+    #[doc = "Bit 3 - Output Compare C Match Flag"]
+    #[inline]
+    pub fn ocf_c(&mut self) -> _OCF_CW {
+        _OCF_CW { w: self }
+    }
     #[doc = "Bit 2 - Output Compare B Match Flag"]
     #[inline]
-    pub fn ocf0b(&mut self) -> _OCF0BW {
-        _OCF0BW { w: self }
+    pub fn ocf_b(&mut self) -> _OCF_BW {
+        _OCF_BW { w: self }
     }
     #[doc = "Bit 1 - Output Compare A Match Flag"]
     #[inline]
-    pub fn ocf0a(&mut self) -> _OCF0AW {
-        _OCF0AW { w: self }
+    pub fn ocf_a(&mut self) -> _OCF_AW {
+        _OCF_AW { w: self }
     }
     #[doc = "Bit 0 - Timer Overflow Flag"]
     #[inline]
-    pub fn tov0(&mut self) -> _TOV0W {
-        _TOV0W { w: self }
+    pub fn tov(&mut self) -> _TOVW {
+        _TOVW { w: self }
     }
 }

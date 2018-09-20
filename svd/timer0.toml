@@ -4,34 +4,34 @@ desc = "8-Bit Timer/Counter0 with PWM"
 
 #---------------------------------------------------------------------#
 [[reg]]
-name = "TIFR0"
+name = "TIFR"
 desc = "Timer Interrupt Flag Register"
 addr = "0x35"
 fields = [
-    {name="OCF0B", desc="Output Compare B Match Flag", rnge="2:2"},
-    {name="OCF0A", desc="Output Compare A Match Flag", rnge="1:1"},
-    {name="TOV0",  desc = "Timer Overflow Flag",       rnge="0:0"},
+    {name="OCF_B", desc="Output Compare B Match Flag", rnge="2:2"},
+    {name="OCF_A", desc="Output Compare A Match Flag", rnge="1:1"},
+    {name="TOV",   desc = "Timer Overflow Flag",       rnge="0:0"},
 ]
 
 #---------------------------------------------------------------------#
 [[reg]]
-name = "TCCR0A"
+name = "TCCR_A"
 desc = "Timer/Counter Control Register A"
 addr = "0x44"
 fields = [
-    {name="COM0A", desc="Compare Match Output A Mode",                    rnge="7:6"},
-    {name="COM0B", desc="Compare Match Output B Mode",                    rnge="5:4"},
-    {name="WGM0",  desc="Waveform Generation Mode (&amp; TCCR0B::WGM02)", rnge="1:0"},
+    {name="COM_A", desc="Compare Match Output A Mode",       rnge="7:6"},
+    {name="COM_B", desc="Compare Match Output B Mode",       rnge="5:4"},
+    {name="WGM0",  desc="Waveform Generation Mode Bits 1:0", rnge="1:0"},
 ]
 
 #---------------------------------------------------------------------#
 [[reg]]
-name = "TCCR0B"
+name = "TCCR_B"
 desc = "Timer/Counter Control Register B"
 addr = "0x45"
 
 [[reg.fields]]
-name = "FOC0A"
+name = "FOC_A"
 desc = "Force Output Compare A"
 rnge = "7:7"
 cstm = """\
@@ -39,7 +39,7 @@ cstm = """\
 """
 
 [[reg.fields]]
-name = "FOC0B"
+name = "FOC_B"
 desc = "Force Output Compare B"
 rnge = "6:6"
 cstm = """\
@@ -47,40 +47,40 @@ cstm = """\
 """
 
 [[reg.fields]]
-name = "WGM02"
-desc = "Waveform Generation Mode"
+name = "WGM2"
+desc = "Waveform Generation Mode Bit 2"
 rnge = "3:3"
 
 [[reg.fields]]
-name = "CS0"
+name = "CS"
 desc = "Clock Select"
 rnge = "2:0"
 
 #---------------------------------------------------------------------#
 [[reg]]
-name = "TCNT0"
+name = "TCNT"
 desc = "Timer/Counter Register"
 addr = "0x46"
 
 #---------------------------------------------------------------------#
 [[reg]]
-name = "OCR0A"
+name = "OCR_A"
 desc = "Timer Output Compare Register A"
 addr = "0x47"
 
 #---------------------------------------------------------------------#
 [[reg]]
-name = "OCR0B"
+name = "OCR_B"
 desc = "Timer Output Compare Register B"
 addr = "0x48"
 
 #---------------------------------------------------------------------#
 [[reg]]
-name = "TIMSK0"
+name = "TIMSK"
 desc = "Timer Interrupt Mask Register"
 addr = "0x6E"
 fields = [
-    {name="OCIE0B", desc="Output Compare Match B Interrupt Enable", rnge="2:2"},
-    {name="OCIE0A", desc="Output Compare Match A Interrupt Enable", rnge="1:1"},
-    {name="TOIE0",  desc="Timer Overflow Interrupt Enable",         rnge="0:0"},
+    {name="OCIE_B", desc="Output Compare Match B Interrupt Enable", rnge="2:2"},
+    {name="OCIE_A", desc="Output Compare Match A Interrupt Enable", rnge="1:1"},
+    {name="TOIE",   desc="Timer Overflow Interrupt Enable",         rnge="0:0"},
 ]

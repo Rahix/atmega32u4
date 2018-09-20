@@ -4,61 +4,61 @@ desc = "16-Bit Timer/Counter1"
 
 #---------------------------------------------------------------------#
 [[reg]]
-name = "TIFR1"
+name = "TIFR"
 desc = "Timer Interrupt Flag Register"
 addr = "0x36"
 fields = [
-    {name="ICF1",  desc="Input Capture Flag",          rnge="5:5"},
-    {name="OCF1C", desc="Output Compare C Match Flag", rnge="3:3"},
-    {name="OCF1B", desc="Output Compare B Match Flag", rnge="2:2"},
-    {name="OCF1A", desc="Output Compare A Match Flag", rnge="1:1"},
-    {name="TOV1",  desc="Timer Overflow Flag",         rnge="0:0"},
+    {name="ICF",   desc="Input Capture Flag",          rnge="5:5"},
+    {name="OCF_C", desc="Output Compare C Match Flag", rnge="3:3"},
+    {name="OCF_B", desc="Output Compare B Match Flag", rnge="2:2"},
+    {name="OCF_A", desc="Output Compare A Match Flag", rnge="1:1"},
+    {name="TOV",   desc="Timer Overflow Flag",         rnge="0:0"},
 ]
 
 #---------------------------------------------------------------------#
 [[reg]]
-name = "TCCR1A"
+name = "TCCR_A"
 desc = "Timer/Counter Control Register A"
 addr = "0x80"
 fields = [
-    {name="COM1A", desc="Compare Output Mode for Channel A", rnge="7:6"},
-    {name="COM1B", desc="Compare Output Mode for Channel B", rnge="5:4"},
-    {name="COM1C", desc="Compare Output Mode for Channel C", rnge="3:2"},
-    {name="WGM1",  desc="Waveform Generation Mode 1:0",      rnge="1:0"},
+    {name="COM_A", desc="Compare Output Mode for Channel A", rnge="7:6"},
+    {name="COM_B", desc="Compare Output Mode for Channel B", rnge="5:4"},
+    {name="COM_C", desc="Compare Output Mode for Channel C", rnge="3:2"},
+    {name="WGM0",  desc="Waveform Generation Mode 1:0",      rnge="1:0"},
 ]
 
 #---------------------------------------------------------------------#
 [[reg]]
-name = "TCCR1B"
+name = "TCCR_B"
 desc = "Timer/Counter Control Register B"
 addr = "0x81"
 fields = [
-    {name="ICNC1", desc="Input Capture Noise Canceler", rnge="7:7"},
-    {name="ICES1", desc="Input Capture Edge Set",       rnge="6:6"},
-    {name="WGM1",  desc="Waveform Generation Mode 3:2", rnge="4:3"},
-    {name="CS1",   desc="Clock Select",                 rnge="2:0"},
+    {name="ICNC", desc="Input Capture Noise Canceler", rnge="7:7"},
+    {name="ICES", desc="Input Capture Edge Set",       rnge="6:6"},
+    {name="WGM2", desc="Waveform Generation Mode 3:2", rnge="4:3"},
+    {name="CS",   desc="Clock Select",                 rnge="2:0"},
 ]
 
 #---------------------------------------------------------------------#
 [[reg]]
-name = "TCCR1C"
+name = "TCCR_C"
 desc = "Timer/Counter Control Register C"
 addr = "0x82"
 fields = [
-    {name="FOC1A", desc="Force Output Compare for Channel A", rnge="7:7"},
-    {name="FOC1B", desc="Force Output Compare for Channel B", rnge="6:6"},
-    {name="FOC1C", desc="Force Output Compare for Channel C", rnge="5:5"},
+    {name="FOC_A", desc="Force Output Compare for Channel A", rnge="7:7"},
+    {name="FOC_B", desc="Force Output Compare for Channel B", rnge="6:6"},
+    {name="FOC_C", desc="Force Output Compare for Channel C", rnge="5:5"},
 ]
 
 #---------------------------------------------------------------------#
 [[reg]]
-name = "TIMSK1"
+name = "TIMSK"
 desc = "Timer Interrupt Mask Register"
 addr = "0x6f"
 fields = [
-    {name="ICIE1", desc="Input Capture Interrupt Enable", rnge="5:5"},
-    {name="OCIE1C", desc="Output Compare Match C Interrupt Enable", rnge="3:3"},
-    {name="OCIE1B", desc="Output Compare Match B Interrupt Enable", rnge="2:2"},
-    {name="OCIE1A", desc="Output Compare Match A Interrupt Enable", rnge="1:1"},
-    {name="TOIE1",  desc="Timer Overflow Interrupt Enable",         rnge="0:0"},
+    {name="ICIE",   desc="Input Capture Interrupt Enable",          rnge="5:5"},
+    {name="OCIE_C", desc="Output Compare Match C Interrupt Enable", rnge="3:3"},
+    {name="OCIE_B", desc="Output Compare Match B Interrupt Enable", rnge="2:2"},
+    {name="OCIE_A", desc="Output Compare Match A Interrupt Enable", rnge="1:1"},
+    {name="TOIE",   desc="Timer Overflow Interrupt Enable",         rnge="0:0"},
 ]

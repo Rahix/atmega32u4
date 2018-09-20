@@ -84,7 +84,7 @@ def main():
           <access>read-only</access>
           <addressOffset>0x00</addressOffset>""")
             bit_fields(
-                f"PIN{char}",
+                f"P",
                 bits,
                 doc="Input",
                 one="HIGH",
@@ -100,7 +100,7 @@ def main():
           <description>{doc_name} Data Direction Register</description>
           <addressOffset>0x01</addressOffset>""")
             bit_fields(
-                f"DD{char}",
+                f"DD",
                 bits,
                 doc="Direction",
                 one="OUTPUT",
@@ -116,9 +116,9 @@ def main():
           <description>{doc_name} Output/Data Register</description>
           <addressOffset>0x02</addressOffset>""")
             bit_fields(
-                f"PORT{char}",
+                f"D",
                 bits,
-                doc="Output",
+                doc="Output/Data",
                 one="HIGH",
                 onedoc="Pin is high",
                 zero="LOW",

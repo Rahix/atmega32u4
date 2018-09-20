@@ -6,7 +6,7 @@ pub struct R {
 pub struct W {
     bits: u8,
 }
-impl super::OCR0B {
+impl super::OCR_A {
     #[doc = r" Modifies the contents of the register"]
     #[inline]
     pub fn modify<F>(&self, f: F)

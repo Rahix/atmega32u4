@@ -2,45 +2,45 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - Timer Interrupt Flag Register"]
-    pub tifr1: TIFR1,
+    pub tifr: TIFR,
     _reserved0: [u8; 56usize],
     #[doc = "0x39 - Timer Interrupt Mask Register"]
-    pub timsk1: TIMSK1,
+    pub timsk: TIMSK,
     _reserved1: [u8; 16usize],
     #[doc = "0x4a - Timer/Counter Control Register A"]
-    pub tccr1a: TCCR1A,
+    pub tccr_a: TCCR_A,
     #[doc = "0x4b - Timer/Counter Control Register B"]
-    pub tccr1b: TCCR1B,
+    pub tccr_b: TCCR_B,
     #[doc = "0x4c - Timer/Counter Control Register C"]
-    pub tccr1c: TCCR1C,
+    pub tccr_c: TCCR_C,
 }
 #[doc = "Timer Interrupt Flag Register"]
-pub struct TIFR1 {
+pub struct TIFR {
     register: ::vcell::VolatileCell<u8>,
 }
 #[doc = "Timer Interrupt Flag Register"]
-pub mod tifr1;
+pub mod tifr;
 #[doc = "Timer Interrupt Mask Register"]
-pub struct TIMSK1 {
+pub struct TIMSK {
     register: ::vcell::VolatileCell<u8>,
 }
 #[doc = "Timer Interrupt Mask Register"]
-pub mod timsk1;
+pub mod timsk;
 #[doc = "Timer/Counter Control Register A"]
-pub struct TCCR1A {
+pub struct TCCR_A {
     register: ::vcell::VolatileCell<u8>,
 }
 #[doc = "Timer/Counter Control Register A"]
-pub mod tccr1a;
+pub mod tccr_a;
 #[doc = "Timer/Counter Control Register B"]
-pub struct TCCR1B {
+pub struct TCCR_B {
     register: ::vcell::VolatileCell<u8>,
 }
 #[doc = "Timer/Counter Control Register B"]
-pub mod tccr1b;
+pub mod tccr_b;
 #[doc = "Timer/Counter Control Register C"]
-pub struct TCCR1C {
+pub struct TCCR_C {
     register: ::vcell::VolatileCell<u8>,
 }
 #[doc = "Timer/Counter Control Register C"]
-pub mod tccr1c;
+pub mod tccr_c;

@@ -6,7 +6,7 @@ pub struct R {
 pub struct W {
     bits: u8,
 }
-impl super::TIFR1 {
+impl super::TIMSK {
     #[doc = r" Modifies the contents of the register"]
     #[inline]
     pub fn modify<F>(&self, f: F)
@@ -41,10 +41,10 @@ impl super::TIFR1 {
     }
 }
 #[doc = r" Value of the field"]
-pub struct ICF1R {
+pub struct ICIER {
     bits: bool,
 }
-impl ICF1R {
+impl ICIER {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bit(&self) -> bool {
@@ -62,10 +62,10 @@ impl ICF1R {
     }
 }
 #[doc = r" Value of the field"]
-pub struct OCF1CR {
+pub struct OCIE_CR {
     bits: bool,
 }
-impl OCF1CR {
+impl OCIE_CR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bit(&self) -> bool {
@@ -83,10 +83,10 @@ impl OCF1CR {
     }
 }
 #[doc = r" Value of the field"]
-pub struct OCF1BR {
+pub struct OCIE_BR {
     bits: bool,
 }
-impl OCF1BR {
+impl OCIE_BR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bit(&self) -> bool {
@@ -104,10 +104,10 @@ impl OCF1BR {
     }
 }
 #[doc = r" Value of the field"]
-pub struct OCF1AR {
+pub struct OCIE_AR {
     bits: bool,
 }
-impl OCF1AR {
+impl OCIE_AR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bit(&self) -> bool {
@@ -125,10 +125,10 @@ impl OCF1AR {
     }
 }
 #[doc = r" Value of the field"]
-pub struct TOV1R {
+pub struct TOIER {
     bits: bool,
 }
-impl TOV1R {
+impl TOIER {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bit(&self) -> bool {
@@ -146,10 +146,10 @@ impl TOV1R {
     }
 }
 #[doc = r" Proxy"]
-pub struct _ICF1W<'a> {
+pub struct _ICIEW<'a> {
     w: &'a mut W,
 }
-impl<'a> _ICF1W<'a> {
+impl<'a> _ICIEW<'a> {
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -169,10 +169,10 @@ impl<'a> _ICF1W<'a> {
     }
 }
 #[doc = r" Proxy"]
-pub struct _OCF1CW<'a> {
+pub struct _OCIE_CW<'a> {
     w: &'a mut W,
 }
-impl<'a> _OCF1CW<'a> {
+impl<'a> _OCIE_CW<'a> {
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -192,10 +192,10 @@ impl<'a> _OCF1CW<'a> {
     }
 }
 #[doc = r" Proxy"]
-pub struct _OCF1BW<'a> {
+pub struct _OCIE_BW<'a> {
     w: &'a mut W,
 }
-impl<'a> _OCF1BW<'a> {
+impl<'a> _OCIE_BW<'a> {
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -215,10 +215,10 @@ impl<'a> _OCF1BW<'a> {
     }
 }
 #[doc = r" Proxy"]
-pub struct _OCF1AW<'a> {
+pub struct _OCIE_AW<'a> {
     w: &'a mut W,
 }
-impl<'a> _OCF1AW<'a> {
+impl<'a> _OCIE_AW<'a> {
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -238,10 +238,10 @@ impl<'a> _OCF1AW<'a> {
     }
 }
 #[doc = r" Proxy"]
-pub struct _TOV1W<'a> {
+pub struct _TOIEW<'a> {
     w: &'a mut W,
 }
-impl<'a> _TOV1W<'a> {
+impl<'a> _TOIEW<'a> {
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -266,55 +266,55 @@ impl R {
     pub fn bits(&self) -> u8 {
         self.bits
     }
-    #[doc = "Bit 5 - Input Capture Flag"]
+    #[doc = "Bit 5 - Input Capture Interrupt Enable"]
     #[inline]
-    pub fn icf1(&self) -> ICF1R {
+    pub fn icie(&self) -> ICIER {
         let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 5;
             ((self.bits >> OFFSET) & MASK as u8) != 0
         };
-        ICF1R { bits }
+        ICIER { bits }
     }
-    #[doc = "Bit 3 - Output Compare C Match Flag"]
+    #[doc = "Bit 3 - Output Compare Match C Interrupt Enable"]
     #[inline]
-    pub fn ocf1c(&self) -> OCF1CR {
+    pub fn ocie_c(&self) -> OCIE_CR {
         let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 3;
             ((self.bits >> OFFSET) & MASK as u8) != 0
         };
-        OCF1CR { bits }
+        OCIE_CR { bits }
     }
-    #[doc = "Bit 2 - Output Compare B Match Flag"]
+    #[doc = "Bit 2 - Output Compare Match B Interrupt Enable"]
     #[inline]
-    pub fn ocf1b(&self) -> OCF1BR {
+    pub fn ocie_b(&self) -> OCIE_BR {
         let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 2;
             ((self.bits >> OFFSET) & MASK as u8) != 0
         };
-        OCF1BR { bits }
+        OCIE_BR { bits }
     }
-    #[doc = "Bit 1 - Output Compare A Match Flag"]
+    #[doc = "Bit 1 - Output Compare Match A Interrupt Enable"]
     #[inline]
-    pub fn ocf1a(&self) -> OCF1AR {
+    pub fn ocie_a(&self) -> OCIE_AR {
         let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 1;
             ((self.bits >> OFFSET) & MASK as u8) != 0
         };
-        OCF1AR { bits }
+        OCIE_AR { bits }
     }
-    #[doc = "Bit 0 - Timer Overflow Flag"]
+    #[doc = "Bit 0 - Timer Overflow Interrupt Enable"]
     #[inline]
-    pub fn tov1(&self) -> TOV1R {
+    pub fn toie(&self) -> TOIER {
         let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 0;
             ((self.bits >> OFFSET) & MASK as u8) != 0
         };
-        TOV1R { bits }
+        TOIER { bits }
     }
 }
 impl W {
@@ -329,29 +329,29 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 5 - Input Capture Flag"]
+    #[doc = "Bit 5 - Input Capture Interrupt Enable"]
     #[inline]
-    pub fn icf1(&mut self) -> _ICF1W {
-        _ICF1W { w: self }
+    pub fn icie(&mut self) -> _ICIEW {
+        _ICIEW { w: self }
     }
-    #[doc = "Bit 3 - Output Compare C Match Flag"]
+    #[doc = "Bit 3 - Output Compare Match C Interrupt Enable"]
     #[inline]
-    pub fn ocf1c(&mut self) -> _OCF1CW {
-        _OCF1CW { w: self }
+    pub fn ocie_c(&mut self) -> _OCIE_CW {
+        _OCIE_CW { w: self }
     }
-    #[doc = "Bit 2 - Output Compare B Match Flag"]
+    #[doc = "Bit 2 - Output Compare Match B Interrupt Enable"]
     #[inline]
-    pub fn ocf1b(&mut self) -> _OCF1BW {
-        _OCF1BW { w: self }
+    pub fn ocie_b(&mut self) -> _OCIE_BW {
+        _OCIE_BW { w: self }
     }
-    #[doc = "Bit 1 - Output Compare A Match Flag"]
+    #[doc = "Bit 1 - Output Compare Match A Interrupt Enable"]
     #[inline]
-    pub fn ocf1a(&mut self) -> _OCF1AW {
-        _OCF1AW { w: self }
+    pub fn ocie_a(&mut self) -> _OCIE_AW {
+        _OCIE_AW { w: self }
     }
-    #[doc = "Bit 0 - Timer Overflow Flag"]
+    #[doc = "Bit 0 - Timer Overflow Interrupt Enable"]
     #[inline]
-    pub fn tov1(&mut self) -> _TOV1W {
-        _TOV1W { w: self }
+    pub fn toie(&mut self) -> _TOIEW {
+        _TOIEW { w: self }
     }
 }

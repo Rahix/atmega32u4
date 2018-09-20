@@ -9,15 +9,15 @@ impl super::PIN {
         R { bits: self.register.get() }
     }
 }
-#[doc = "Possible values of the field `PIND7`"]
+#[doc = "Possible values of the field `P7`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIND7R {
+pub enum P7R {
     #[doc = "Pin is low"]
     LOW,
     #[doc = "Pin is high"]
     HIGH,
 }
-impl PIND7R {
+impl P7R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -32,39 +32,39 @@ impl PIND7R {
     #[inline]
     pub fn bit(&self) -> bool {
         match *self {
-            PIND7R::LOW => false,
-            PIND7R::HIGH => true,
+            P7R::LOW => false,
+            P7R::HIGH => true,
         }
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
-    pub fn _from(value: bool) -> PIND7R {
+    pub fn _from(value: bool) -> P7R {
         match value {
-            false => PIND7R::LOW,
-            true => PIND7R::HIGH,
+            false => P7R::LOW,
+            true => P7R::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline]
     pub fn is_low(&self) -> bool {
-        *self == PIND7R::LOW
+        *self == P7R::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline]
     pub fn is_high(&self) -> bool {
-        *self == PIND7R::HIGH
+        *self == P7R::HIGH
     }
 }
-#[doc = "Possible values of the field `PIND6`"]
+#[doc = "Possible values of the field `P6`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIND6R {
+pub enum P6R {
     #[doc = "Pin is low"]
     LOW,
     #[doc = "Pin is high"]
     HIGH,
 }
-impl PIND6R {
+impl P6R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -79,39 +79,39 @@ impl PIND6R {
     #[inline]
     pub fn bit(&self) -> bool {
         match *self {
-            PIND6R::LOW => false,
-            PIND6R::HIGH => true,
+            P6R::LOW => false,
+            P6R::HIGH => true,
         }
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
-    pub fn _from(value: bool) -> PIND6R {
+    pub fn _from(value: bool) -> P6R {
         match value {
-            false => PIND6R::LOW,
-            true => PIND6R::HIGH,
+            false => P6R::LOW,
+            true => P6R::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline]
     pub fn is_low(&self) -> bool {
-        *self == PIND6R::LOW
+        *self == P6R::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline]
     pub fn is_high(&self) -> bool {
-        *self == PIND6R::HIGH
+        *self == P6R::HIGH
     }
 }
-#[doc = "Possible values of the field `PIND5`"]
+#[doc = "Possible values of the field `P5`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIND5R {
+pub enum P5R {
     #[doc = "Pin is low"]
     LOW,
     #[doc = "Pin is high"]
     HIGH,
 }
-impl PIND5R {
+impl P5R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -126,39 +126,39 @@ impl PIND5R {
     #[inline]
     pub fn bit(&self) -> bool {
         match *self {
-            PIND5R::LOW => false,
-            PIND5R::HIGH => true,
+            P5R::LOW => false,
+            P5R::HIGH => true,
         }
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
-    pub fn _from(value: bool) -> PIND5R {
+    pub fn _from(value: bool) -> P5R {
         match value {
-            false => PIND5R::LOW,
-            true => PIND5R::HIGH,
+            false => P5R::LOW,
+            true => P5R::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline]
     pub fn is_low(&self) -> bool {
-        *self == PIND5R::LOW
+        *self == P5R::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline]
     pub fn is_high(&self) -> bool {
-        *self == PIND5R::HIGH
+        *self == P5R::HIGH
     }
 }
-#[doc = "Possible values of the field `PIND4`"]
+#[doc = "Possible values of the field `P4`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIND4R {
+pub enum P4R {
     #[doc = "Pin is low"]
     LOW,
     #[doc = "Pin is high"]
     HIGH,
 }
-impl PIND4R {
+impl P4R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -173,39 +173,39 @@ impl PIND4R {
     #[inline]
     pub fn bit(&self) -> bool {
         match *self {
-            PIND4R::LOW => false,
-            PIND4R::HIGH => true,
+            P4R::LOW => false,
+            P4R::HIGH => true,
         }
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
-    pub fn _from(value: bool) -> PIND4R {
+    pub fn _from(value: bool) -> P4R {
         match value {
-            false => PIND4R::LOW,
-            true => PIND4R::HIGH,
+            false => P4R::LOW,
+            true => P4R::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline]
     pub fn is_low(&self) -> bool {
-        *self == PIND4R::LOW
+        *self == P4R::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline]
     pub fn is_high(&self) -> bool {
-        *self == PIND4R::HIGH
+        *self == P4R::HIGH
     }
 }
-#[doc = "Possible values of the field `PIND3`"]
+#[doc = "Possible values of the field `P3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIND3R {
+pub enum P3R {
     #[doc = "Pin is low"]
     LOW,
     #[doc = "Pin is high"]
     HIGH,
 }
-impl PIND3R {
+impl P3R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -220,39 +220,39 @@ impl PIND3R {
     #[inline]
     pub fn bit(&self) -> bool {
         match *self {
-            PIND3R::LOW => false,
-            PIND3R::HIGH => true,
+            P3R::LOW => false,
+            P3R::HIGH => true,
         }
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
-    pub fn _from(value: bool) -> PIND3R {
+    pub fn _from(value: bool) -> P3R {
         match value {
-            false => PIND3R::LOW,
-            true => PIND3R::HIGH,
+            false => P3R::LOW,
+            true => P3R::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline]
     pub fn is_low(&self) -> bool {
-        *self == PIND3R::LOW
+        *self == P3R::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline]
     pub fn is_high(&self) -> bool {
-        *self == PIND3R::HIGH
+        *self == P3R::HIGH
     }
 }
-#[doc = "Possible values of the field `PIND2`"]
+#[doc = "Possible values of the field `P2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIND2R {
+pub enum P2R {
     #[doc = "Pin is low"]
     LOW,
     #[doc = "Pin is high"]
     HIGH,
 }
-impl PIND2R {
+impl P2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -267,39 +267,39 @@ impl PIND2R {
     #[inline]
     pub fn bit(&self) -> bool {
         match *self {
-            PIND2R::LOW => false,
-            PIND2R::HIGH => true,
+            P2R::LOW => false,
+            P2R::HIGH => true,
         }
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
-    pub fn _from(value: bool) -> PIND2R {
+    pub fn _from(value: bool) -> P2R {
         match value {
-            false => PIND2R::LOW,
-            true => PIND2R::HIGH,
+            false => P2R::LOW,
+            true => P2R::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline]
     pub fn is_low(&self) -> bool {
-        *self == PIND2R::LOW
+        *self == P2R::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline]
     pub fn is_high(&self) -> bool {
-        *self == PIND2R::HIGH
+        *self == P2R::HIGH
     }
 }
-#[doc = "Possible values of the field `PIND1`"]
+#[doc = "Possible values of the field `P1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIND1R {
+pub enum P1R {
     #[doc = "Pin is low"]
     LOW,
     #[doc = "Pin is high"]
     HIGH,
 }
-impl PIND1R {
+impl P1R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -314,39 +314,39 @@ impl PIND1R {
     #[inline]
     pub fn bit(&self) -> bool {
         match *self {
-            PIND1R::LOW => false,
-            PIND1R::HIGH => true,
+            P1R::LOW => false,
+            P1R::HIGH => true,
         }
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
-    pub fn _from(value: bool) -> PIND1R {
+    pub fn _from(value: bool) -> P1R {
         match value {
-            false => PIND1R::LOW,
-            true => PIND1R::HIGH,
+            false => P1R::LOW,
+            true => P1R::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline]
     pub fn is_low(&self) -> bool {
-        *self == PIND1R::LOW
+        *self == P1R::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline]
     pub fn is_high(&self) -> bool {
-        *self == PIND1R::HIGH
+        *self == P1R::HIGH
     }
 }
-#[doc = "Possible values of the field `PIND0`"]
+#[doc = "Possible values of the field `P0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIND0R {
+pub enum P0R {
     #[doc = "Pin is low"]
     LOW,
     #[doc = "Pin is high"]
     HIGH,
 }
-impl PIND0R {
+impl P0R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -361,28 +361,28 @@ impl PIND0R {
     #[inline]
     pub fn bit(&self) -> bool {
         match *self {
-            PIND0R::LOW => false,
-            PIND0R::HIGH => true,
+            P0R::LOW => false,
+            P0R::HIGH => true,
         }
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
-    pub fn _from(value: bool) -> PIND0R {
+    pub fn _from(value: bool) -> P0R {
         match value {
-            false => PIND0R::LOW,
-            true => PIND0R::HIGH,
+            false => P0R::LOW,
+            true => P0R::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline]
     pub fn is_low(&self) -> bool {
-        *self == PIND0R::LOW
+        *self == P0R::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline]
     pub fn is_high(&self) -> bool {
-        *self == PIND0R::HIGH
+        *self == P0R::HIGH
     }
 }
 impl R {
@@ -393,8 +393,8 @@ impl R {
     }
     #[doc = "Bit 7 - Pin 7 Input"]
     #[inline]
-    pub fn pind7(&self) -> PIND7R {
-        PIND7R::_from({
+    pub fn p7(&self) -> P7R {
+        P7R::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 7;
             ((self.bits >> OFFSET) & MASK as u8) != 0
@@ -402,8 +402,8 @@ impl R {
     }
     #[doc = "Bit 6 - Pin 6 Input"]
     #[inline]
-    pub fn pind6(&self) -> PIND6R {
-        PIND6R::_from({
+    pub fn p6(&self) -> P6R {
+        P6R::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 6;
             ((self.bits >> OFFSET) & MASK as u8) != 0
@@ -411,8 +411,8 @@ impl R {
     }
     #[doc = "Bit 5 - Pin 5 Input"]
     #[inline]
-    pub fn pind5(&self) -> PIND5R {
-        PIND5R::_from({
+    pub fn p5(&self) -> P5R {
+        P5R::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 5;
             ((self.bits >> OFFSET) & MASK as u8) != 0
@@ -420,8 +420,8 @@ impl R {
     }
     #[doc = "Bit 4 - Pin 4 Input"]
     #[inline]
-    pub fn pind4(&self) -> PIND4R {
-        PIND4R::_from({
+    pub fn p4(&self) -> P4R {
+        P4R::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 4;
             ((self.bits >> OFFSET) & MASK as u8) != 0
@@ -429,8 +429,8 @@ impl R {
     }
     #[doc = "Bit 3 - Pin 3 Input"]
     #[inline]
-    pub fn pind3(&self) -> PIND3R {
-        PIND3R::_from({
+    pub fn p3(&self) -> P3R {
+        P3R::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 3;
             ((self.bits >> OFFSET) & MASK as u8) != 0
@@ -438,8 +438,8 @@ impl R {
     }
     #[doc = "Bit 2 - Pin 2 Input"]
     #[inline]
-    pub fn pind2(&self) -> PIND2R {
-        PIND2R::_from({
+    pub fn p2(&self) -> P2R {
+        P2R::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 2;
             ((self.bits >> OFFSET) & MASK as u8) != 0
@@ -447,8 +447,8 @@ impl R {
     }
     #[doc = "Bit 1 - Pin 1 Input"]
     #[inline]
-    pub fn pind1(&self) -> PIND1R {
-        PIND1R::_from({
+    pub fn p1(&self) -> P1R {
+        P1R::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 1;
             ((self.bits >> OFFSET) & MASK as u8) != 0
@@ -456,8 +456,8 @@ impl R {
     }
     #[doc = "Bit 0 - Pin 0 Input"]
     #[inline]
-    pub fn pind0(&self) -> PIND0R {
-        PIND0R::_from({
+    pub fn p0(&self) -> P0R {
+        P0R::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 0;
             ((self.bits >> OFFSET) & MASK as u8) != 0

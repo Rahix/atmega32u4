@@ -40,15 +40,15 @@ impl super::DDR {
         self.write(|w| w)
     }
 }
-#[doc = "Possible values of the field `DDE6`"]
+#[doc = "Possible values of the field `DD6`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DDE6R {
+pub enum DD6R {
     #[doc = "Pin is configured as an input"]
     INPUT,
     #[doc = "Pin is configured as an output"]
     OUTPUT,
 }
-impl DDE6R {
+impl DD6R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -63,39 +63,39 @@ impl DDE6R {
     #[inline]
     pub fn bit(&self) -> bool {
         match *self {
-            DDE6R::INPUT => false,
-            DDE6R::OUTPUT => true,
+            DD6R::INPUT => false,
+            DD6R::OUTPUT => true,
         }
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
-    pub fn _from(value: bool) -> DDE6R {
+    pub fn _from(value: bool) -> DD6R {
         match value {
-            false => DDE6R::INPUT,
-            true => DDE6R::OUTPUT,
+            false => DD6R::INPUT,
+            true => DD6R::OUTPUT,
         }
     }
     #[doc = "Checks if the value of the field is `INPUT`"]
     #[inline]
     pub fn is_input(&self) -> bool {
-        *self == DDE6R::INPUT
+        *self == DD6R::INPUT
     }
     #[doc = "Checks if the value of the field is `OUTPUT`"]
     #[inline]
     pub fn is_output(&self) -> bool {
-        *self == DDE6R::OUTPUT
+        *self == DD6R::OUTPUT
     }
 }
-#[doc = "Possible values of the field `DDE2`"]
+#[doc = "Possible values of the field `DD2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DDE2R {
+pub enum DD2R {
     #[doc = "Pin is configured as an input"]
     INPUT,
     #[doc = "Pin is configured as an output"]
     OUTPUT,
 }
-impl DDE2R {
+impl DD2R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -110,56 +110,56 @@ impl DDE2R {
     #[inline]
     pub fn bit(&self) -> bool {
         match *self {
-            DDE2R::INPUT => false,
-            DDE2R::OUTPUT => true,
+            DD2R::INPUT => false,
+            DD2R::OUTPUT => true,
         }
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
-    pub fn _from(value: bool) -> DDE2R {
+    pub fn _from(value: bool) -> DD2R {
         match value {
-            false => DDE2R::INPUT,
-            true => DDE2R::OUTPUT,
+            false => DD2R::INPUT,
+            true => DD2R::OUTPUT,
         }
     }
     #[doc = "Checks if the value of the field is `INPUT`"]
     #[inline]
     pub fn is_input(&self) -> bool {
-        *self == DDE2R::INPUT
+        *self == DD2R::INPUT
     }
     #[doc = "Checks if the value of the field is `OUTPUT`"]
     #[inline]
     pub fn is_output(&self) -> bool {
-        *self == DDE2R::OUTPUT
+        *self == DD2R::OUTPUT
     }
 }
-#[doc = "Values that can be written to the field `DDE6`"]
-pub enum DDE6W {
+#[doc = "Values that can be written to the field `DD6`"]
+pub enum DD6W {
     #[doc = "Pin is configured as an input"]
     INPUT,
     #[doc = "Pin is configured as an output"]
     OUTPUT,
 }
-impl DDE6W {
+impl DD6W {
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
-            DDE6W::INPUT => false,
-            DDE6W::OUTPUT => true,
+            DD6W::INPUT => false,
+            DD6W::OUTPUT => true,
         }
     }
 }
 #[doc = r" Proxy"]
-pub struct _DDE6W<'a> {
+pub struct _DD6W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DDE6W<'a> {
+impl<'a> _DD6W<'a> {
     #[doc = r" Writes `variant` to the field"]
     #[inline]
-    pub fn variant(self, variant: DDE6W) -> &'a mut W {
+    pub fn variant(self, variant: DD6W) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
@@ -167,12 +167,12 @@ impl<'a> _DDE6W<'a> {
     #[doc = "Pin is configured as an input"]
     #[inline]
     pub fn input(self) -> &'a mut W {
-        self.variant(DDE6W::INPUT)
+        self.variant(DD6W::INPUT)
     }
     #[doc = "Pin is configured as an output"]
     #[inline]
     pub fn output(self) -> &'a mut W {
-        self.variant(DDE6W::OUTPUT)
+        self.variant(DD6W::OUTPUT)
     }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
@@ -192,32 +192,32 @@ impl<'a> _DDE6W<'a> {
         self.w
     }
 }
-#[doc = "Values that can be written to the field `DDE2`"]
-pub enum DDE2W {
+#[doc = "Values that can be written to the field `DD2`"]
+pub enum DD2W {
     #[doc = "Pin is configured as an input"]
     INPUT,
     #[doc = "Pin is configured as an output"]
     OUTPUT,
 }
-impl DDE2W {
+impl DD2W {
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
-            DDE2W::INPUT => false,
-            DDE2W::OUTPUT => true,
+            DD2W::INPUT => false,
+            DD2W::OUTPUT => true,
         }
     }
 }
 #[doc = r" Proxy"]
-pub struct _DDE2W<'a> {
+pub struct _DD2W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DDE2W<'a> {
+impl<'a> _DD2W<'a> {
     #[doc = r" Writes `variant` to the field"]
     #[inline]
-    pub fn variant(self, variant: DDE2W) -> &'a mut W {
+    pub fn variant(self, variant: DD2W) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
@@ -225,12 +225,12 @@ impl<'a> _DDE2W<'a> {
     #[doc = "Pin is configured as an input"]
     #[inline]
     pub fn input(self) -> &'a mut W {
-        self.variant(DDE2W::INPUT)
+        self.variant(DD2W::INPUT)
     }
     #[doc = "Pin is configured as an output"]
     #[inline]
     pub fn output(self) -> &'a mut W {
-        self.variant(DDE2W::OUTPUT)
+        self.variant(DD2W::OUTPUT)
     }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
@@ -258,8 +258,8 @@ impl R {
     }
     #[doc = "Bit 6 - Pin 6 Direction"]
     #[inline]
-    pub fn dde6(&self) -> DDE6R {
-        DDE6R::_from({
+    pub fn dd6(&self) -> DD6R {
+        DD6R::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 6;
             ((self.bits >> OFFSET) & MASK as u8) != 0
@@ -267,8 +267,8 @@ impl R {
     }
     #[doc = "Bit 2 - Pin 2 Direction"]
     #[inline]
-    pub fn dde2(&self) -> DDE2R {
-        DDE2R::_from({
+    pub fn dd2(&self) -> DD2R {
+        DD2R::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 2;
             ((self.bits >> OFFSET) & MASK as u8) != 0
@@ -289,12 +289,12 @@ impl W {
     }
     #[doc = "Bit 6 - Pin 6 Direction"]
     #[inline]
-    pub fn dde6(&mut self) -> _DDE6W {
-        _DDE6W { w: self }
+    pub fn dd6(&mut self) -> _DD6W {
+        _DD6W { w: self }
     }
     #[doc = "Bit 2 - Pin 2 Direction"]
     #[inline]
-    pub fn dde2(&mut self) -> _DDE2W {
-        _DDE2W { w: self }
+    pub fn dd2(&mut self) -> _DD2W {
+        _DD2W { w: self }
     }
 }

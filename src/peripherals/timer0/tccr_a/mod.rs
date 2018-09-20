@@ -6,7 +6,7 @@ pub struct R {
 pub struct W {
     bits: u8,
 }
-impl super::TCCR0A {
+impl super::TCCR_A {
     #[doc = r" Modifies the contents of the register"]
     #[inline]
     pub fn modify<F>(&self, f: F)
@@ -41,10 +41,10 @@ impl super::TCCR0A {
     }
 }
 #[doc = r" Value of the field"]
-pub struct COM0AR {
+pub struct COM_AR {
     bits: u8,
 }
-impl COM0AR {
+impl COM_AR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
@@ -52,10 +52,10 @@ impl COM0AR {
     }
 }
 #[doc = r" Value of the field"]
-pub struct COM0BR {
+pub struct COM_BR {
     bits: u8,
 }
-impl COM0BR {
+impl COM_BR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
@@ -74,10 +74,10 @@ impl WGM0R {
     }
 }
 #[doc = r" Proxy"]
-pub struct _COM0AW<'a> {
+pub struct _COM_AW<'a> {
     w: &'a mut W,
 }
-impl<'a> _COM0AW<'a> {
+impl<'a> _COM_AW<'a> {
     #[doc = r" Writes raw bits to the field"]
     #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -89,10 +89,10 @@ impl<'a> _COM0AW<'a> {
     }
 }
 #[doc = r" Proxy"]
-pub struct _COM0BW<'a> {
+pub struct _COM_BW<'a> {
     w: &'a mut W,
 }
-impl<'a> _COM0BW<'a> {
+impl<'a> _COM_BW<'a> {
     #[doc = r" Writes raw bits to the field"]
     #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -126,25 +126,25 @@ impl R {
     }
     #[doc = "Bits 6:7 - Compare Match Output A Mode"]
     #[inline]
-    pub fn com0a(&self) -> COM0AR {
+    pub fn com_a(&self) -> COM_AR {
         let bits = {
             const MASK: u8 = 3;
             const OFFSET: u8 = 6;
             ((self.bits >> OFFSET) & MASK as u8) as u8
         };
-        COM0AR { bits }
+        COM_AR { bits }
     }
     #[doc = "Bits 4:5 - Compare Match Output B Mode"]
     #[inline]
-    pub fn com0b(&self) -> COM0BR {
+    pub fn com_b(&self) -> COM_BR {
         let bits = {
             const MASK: u8 = 3;
             const OFFSET: u8 = 4;
             ((self.bits >> OFFSET) & MASK as u8) as u8
         };
-        COM0BR { bits }
+        COM_BR { bits }
     }
-    #[doc = "Bits 0:1 - Waveform Generation Mode (& TCCR0B::WGM02)"]
+    #[doc = "Bits 0:1 - Waveform Generation Mode Bits 1:0"]
     #[inline]
     pub fn wgm0(&self) -> WGM0R {
         let bits = {
@@ -169,15 +169,15 @@ impl W {
     }
     #[doc = "Bits 6:7 - Compare Match Output A Mode"]
     #[inline]
-    pub fn com0a(&mut self) -> _COM0AW {
-        _COM0AW { w: self }
+    pub fn com_a(&mut self) -> _COM_AW {
+        _COM_AW { w: self }
     }
     #[doc = "Bits 4:5 - Compare Match Output B Mode"]
     #[inline]
-    pub fn com0b(&mut self) -> _COM0BW {
-        _COM0BW { w: self }
+    pub fn com_b(&mut self) -> _COM_BW {
+        _COM_BW { w: self }
     }
-    #[doc = "Bits 0:1 - Waveform Generation Mode (& TCCR0B::WGM02)"]
+    #[doc = "Bits 0:1 - Waveform Generation Mode Bits 1:0"]
     #[inline]
     pub fn wgm0(&mut self) -> _WGM0W {
         _WGM0W { w: self }

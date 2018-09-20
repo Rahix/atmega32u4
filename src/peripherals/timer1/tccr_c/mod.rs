@@ -6,7 +6,7 @@ pub struct R {
 pub struct W {
     bits: u8,
 }
-impl super::TCCR1C {
+impl super::TCCR_C {
     #[doc = r" Modifies the contents of the register"]
     #[inline]
     pub fn modify<F>(&self, f: F)
@@ -41,10 +41,10 @@ impl super::TCCR1C {
     }
 }
 #[doc = r" Value of the field"]
-pub struct FOC1AR {
+pub struct FOC_AR {
     bits: bool,
 }
-impl FOC1AR {
+impl FOC_AR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bit(&self) -> bool {
@@ -62,10 +62,10 @@ impl FOC1AR {
     }
 }
 #[doc = r" Value of the field"]
-pub struct FOC1BR {
+pub struct FOC_BR {
     bits: bool,
 }
-impl FOC1BR {
+impl FOC_BR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bit(&self) -> bool {
@@ -83,10 +83,10 @@ impl FOC1BR {
     }
 }
 #[doc = r" Value of the field"]
-pub struct FOC1CR {
+pub struct FOC_CR {
     bits: bool,
 }
-impl FOC1CR {
+impl FOC_CR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bit(&self) -> bool {
@@ -104,10 +104,10 @@ impl FOC1CR {
     }
 }
 #[doc = r" Proxy"]
-pub struct _FOC1AW<'a> {
+pub struct _FOC_AW<'a> {
     w: &'a mut W,
 }
-impl<'a> _FOC1AW<'a> {
+impl<'a> _FOC_AW<'a> {
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -127,10 +127,10 @@ impl<'a> _FOC1AW<'a> {
     }
 }
 #[doc = r" Proxy"]
-pub struct _FOC1BW<'a> {
+pub struct _FOC_BW<'a> {
     w: &'a mut W,
 }
-impl<'a> _FOC1BW<'a> {
+impl<'a> _FOC_BW<'a> {
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -150,10 +150,10 @@ impl<'a> _FOC1BW<'a> {
     }
 }
 #[doc = r" Proxy"]
-pub struct _FOC1CW<'a> {
+pub struct _FOC_CW<'a> {
     w: &'a mut W,
 }
-impl<'a> _FOC1CW<'a> {
+impl<'a> _FOC_CW<'a> {
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -180,33 +180,33 @@ impl R {
     }
     #[doc = "Bit 7 - Force Output Compare for Channel A"]
     #[inline]
-    pub fn foc1a(&self) -> FOC1AR {
+    pub fn foc_a(&self) -> FOC_AR {
         let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 7;
             ((self.bits >> OFFSET) & MASK as u8) != 0
         };
-        FOC1AR { bits }
+        FOC_AR { bits }
     }
     #[doc = "Bit 6 - Force Output Compare for Channel B"]
     #[inline]
-    pub fn foc1b(&self) -> FOC1BR {
+    pub fn foc_b(&self) -> FOC_BR {
         let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 6;
             ((self.bits >> OFFSET) & MASK as u8) != 0
         };
-        FOC1BR { bits }
+        FOC_BR { bits }
     }
     #[doc = "Bit 5 - Force Output Compare for Channel C"]
     #[inline]
-    pub fn foc1c(&self) -> FOC1CR {
+    pub fn foc_c(&self) -> FOC_CR {
         let bits = {
             const MASK: bool = true;
             const OFFSET: u8 = 5;
             ((self.bits >> OFFSET) & MASK as u8) != 0
         };
-        FOC1CR { bits }
+        FOC_CR { bits }
     }
 }
 impl W {
@@ -223,17 +223,17 @@ impl W {
     }
     #[doc = "Bit 7 - Force Output Compare for Channel A"]
     #[inline]
-    pub fn foc1a(&mut self) -> _FOC1AW {
-        _FOC1AW { w: self }
+    pub fn foc_a(&mut self) -> _FOC_AW {
+        _FOC_AW { w: self }
     }
     #[doc = "Bit 6 - Force Output Compare for Channel B"]
     #[inline]
-    pub fn foc1b(&mut self) -> _FOC1BW {
-        _FOC1BW { w: self }
+    pub fn foc_b(&mut self) -> _FOC_BW {
+        _FOC_BW { w: self }
     }
     #[doc = "Bit 5 - Force Output Compare for Channel C"]
     #[inline]
-    pub fn foc1c(&mut self) -> _FOC1CW {
-        _FOC1CW { w: self }
+    pub fn foc_c(&mut self) -> _FOC_CW {
+        _FOC_CW { w: self }
     }
 }

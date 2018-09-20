@@ -6,7 +6,7 @@ pub struct R {
 pub struct W {
     bits: u8,
 }
-impl super::TCCR1A {
+impl super::TCCR_A {
     #[doc = r" Modifies the contents of the register"]
     #[inline]
     pub fn modify<F>(&self, f: F)
@@ -41,10 +41,10 @@ impl super::TCCR1A {
     }
 }
 #[doc = r" Value of the field"]
-pub struct COM1AR {
+pub struct COM_AR {
     bits: u8,
 }
-impl COM1AR {
+impl COM_AR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
@@ -52,10 +52,10 @@ impl COM1AR {
     }
 }
 #[doc = r" Value of the field"]
-pub struct COM1BR {
+pub struct COM_BR {
     bits: u8,
 }
-impl COM1BR {
+impl COM_BR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
@@ -63,10 +63,10 @@ impl COM1BR {
     }
 }
 #[doc = r" Value of the field"]
-pub struct COM1CR {
+pub struct COM_CR {
     bits: u8,
 }
-impl COM1CR {
+impl COM_CR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
@@ -74,10 +74,10 @@ impl COM1CR {
     }
 }
 #[doc = r" Value of the field"]
-pub struct WGM1R {
+pub struct WGM0R {
     bits: u8,
 }
-impl WGM1R {
+impl WGM0R {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
@@ -85,10 +85,10 @@ impl WGM1R {
     }
 }
 #[doc = r" Proxy"]
-pub struct _COM1AW<'a> {
+pub struct _COM_AW<'a> {
     w: &'a mut W,
 }
-impl<'a> _COM1AW<'a> {
+impl<'a> _COM_AW<'a> {
     #[doc = r" Writes raw bits to the field"]
     #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -100,10 +100,10 @@ impl<'a> _COM1AW<'a> {
     }
 }
 #[doc = r" Proxy"]
-pub struct _COM1BW<'a> {
+pub struct _COM_BW<'a> {
     w: &'a mut W,
 }
-impl<'a> _COM1BW<'a> {
+impl<'a> _COM_BW<'a> {
     #[doc = r" Writes raw bits to the field"]
     #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -115,10 +115,10 @@ impl<'a> _COM1BW<'a> {
     }
 }
 #[doc = r" Proxy"]
-pub struct _COM1CW<'a> {
+pub struct _COM_CW<'a> {
     w: &'a mut W,
 }
-impl<'a> _COM1CW<'a> {
+impl<'a> _COM_CW<'a> {
     #[doc = r" Writes raw bits to the field"]
     #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -130,10 +130,10 @@ impl<'a> _COM1CW<'a> {
     }
 }
 #[doc = r" Proxy"]
-pub struct _WGM1W<'a> {
+pub struct _WGM0W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WGM1W<'a> {
+impl<'a> _WGM0W<'a> {
     #[doc = r" Writes raw bits to the field"]
     #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -152,43 +152,43 @@ impl R {
     }
     #[doc = "Bits 6:7 - Compare Output Mode for Channel A"]
     #[inline]
-    pub fn com1a(&self) -> COM1AR {
+    pub fn com_a(&self) -> COM_AR {
         let bits = {
             const MASK: u8 = 3;
             const OFFSET: u8 = 6;
             ((self.bits >> OFFSET) & MASK as u8) as u8
         };
-        COM1AR { bits }
+        COM_AR { bits }
     }
     #[doc = "Bits 4:5 - Compare Output Mode for Channel B"]
     #[inline]
-    pub fn com1b(&self) -> COM1BR {
+    pub fn com_b(&self) -> COM_BR {
         let bits = {
             const MASK: u8 = 3;
             const OFFSET: u8 = 4;
             ((self.bits >> OFFSET) & MASK as u8) as u8
         };
-        COM1BR { bits }
+        COM_BR { bits }
     }
     #[doc = "Bits 2:3 - Compare Output Mode for Channel C"]
     #[inline]
-    pub fn com1c(&self) -> COM1CR {
+    pub fn com_c(&self) -> COM_CR {
         let bits = {
             const MASK: u8 = 3;
             const OFFSET: u8 = 2;
             ((self.bits >> OFFSET) & MASK as u8) as u8
         };
-        COM1CR { bits }
+        COM_CR { bits }
     }
     #[doc = "Bits 0:1 - Waveform Generation Mode 1:0"]
     #[inline]
-    pub fn wgm1(&self) -> WGM1R {
+    pub fn wgm0(&self) -> WGM0R {
         let bits = {
             const MASK: u8 = 3;
             const OFFSET: u8 = 0;
             ((self.bits >> OFFSET) & MASK as u8) as u8
         };
-        WGM1R { bits }
+        WGM0R { bits }
     }
 }
 impl W {
@@ -205,22 +205,22 @@ impl W {
     }
     #[doc = "Bits 6:7 - Compare Output Mode for Channel A"]
     #[inline]
-    pub fn com1a(&mut self) -> _COM1AW {
-        _COM1AW { w: self }
+    pub fn com_a(&mut self) -> _COM_AW {
+        _COM_AW { w: self }
     }
     #[doc = "Bits 4:5 - Compare Output Mode for Channel B"]
     #[inline]
-    pub fn com1b(&mut self) -> _COM1BW {
-        _COM1BW { w: self }
+    pub fn com_b(&mut self) -> _COM_BW {
+        _COM_BW { w: self }
     }
     #[doc = "Bits 2:3 - Compare Output Mode for Channel C"]
     #[inline]
-    pub fn com1c(&mut self) -> _COM1CW {
-        _COM1CW { w: self }
+    pub fn com_c(&mut self) -> _COM_CW {
+        _COM_CW { w: self }
     }
     #[doc = "Bits 0:1 - Waveform Generation Mode 1:0"]
     #[inline]
-    pub fn wgm1(&mut self) -> _WGM1W {
-        _WGM1W { w: self }
+    pub fn wgm0(&mut self) -> _WGM0W {
+        _WGM0W { w: self }
     }
 }
