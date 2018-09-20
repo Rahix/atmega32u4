@@ -13,6 +13,27 @@ pub struct RegisterBlock {
     pub tccr_b: TCCR_B,
     #[doc = "0x4c - Timer/Counter Control Register C"]
     pub tccr_c: TCCR_C,
+    _reserved2: [u8; 1usize],
+    #[doc = "0x4e - Timer/Counter Register Low Byte"]
+    pub tcnt_l: TCNT_L,
+    #[doc = "0x4f - Timer/Counter Register High Byte"]
+    pub tcnt_h: TCNT_H,
+    #[doc = "0x50 - Input Capture Register Low Byte"]
+    pub icr_l: ICR_L,
+    #[doc = "0x51 - Input Capture Register High Byte"]
+    pub icr_h: ICR_H,
+    #[doc = "0x52 - Output Compare Register A Low Byte"]
+    pub ocr_a_l: OCR_A_L,
+    #[doc = "0x53 - Output Compare Register A High Byte"]
+    pub ocr_a_h: OCR_A_H,
+    #[doc = "0x54 - Output Compare Register B Low Byte"]
+    pub ocr_b_l: OCR_B_L,
+    #[doc = "0x55 - Output Compare Register B High Byte"]
+    pub ocr_b_h: OCR_B_H,
+    #[doc = "0x56 - Output Compare Register C Low Byte"]
+    pub ocr_c_l: OCR_C_L,
+    #[doc = "0x57 - Output Compare Register C High Byte"]
+    pub ocr_c_h: OCR_C_H,
 }
 #[doc = "Timer Interrupt Flag Register"]
 pub struct TIFR {
@@ -44,3 +65,63 @@ pub struct TCCR_C {
 }
 #[doc = "Timer/Counter Control Register C"]
 pub mod tccr_c;
+#[doc = "Timer/Counter Register Low Byte"]
+pub struct TCNT_L {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Timer/Counter Register Low Byte"]
+pub mod tcnt_l;
+#[doc = "Timer/Counter Register High Byte"]
+pub struct TCNT_H {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Timer/Counter Register High Byte"]
+pub mod tcnt_h;
+#[doc = "Input Capture Register Low Byte"]
+pub struct ICR_L {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Input Capture Register Low Byte"]
+pub mod icr_l;
+#[doc = "Input Capture Register High Byte"]
+pub struct ICR_H {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Input Capture Register High Byte"]
+pub mod icr_h;
+#[doc = "Output Compare Register A Low Byte"]
+pub struct OCR_A_L {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Output Compare Register A Low Byte"]
+pub mod ocr_a_l;
+#[doc = "Output Compare Register A High Byte"]
+pub struct OCR_A_H {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Output Compare Register A High Byte"]
+pub mod ocr_a_h;
+#[doc = "Output Compare Register B Low Byte"]
+pub struct OCR_B_L {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Output Compare Register B Low Byte"]
+pub mod ocr_b_l;
+#[doc = "Output Compare Register B High Byte"]
+pub struct OCR_B_H {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Output Compare Register B High Byte"]
+pub mod ocr_b_h;
+#[doc = "Output Compare Register C Low Byte"]
+pub struct OCR_C_L {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Output Compare Register C Low Byte"]
+pub mod ocr_c_l;
+#[doc = "Output Compare Register C High Byte"]
+pub struct OCR_C_H {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Output Compare Register C High Byte"]
+pub mod ocr_c_h;
