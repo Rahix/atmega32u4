@@ -1,0 +1,124 @@
+[info]
+name = "TIMER3"
+desc = "16-Bit Timer/Counter3"
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "TIFR"
+desc = "Timer Interrupt Flag Register"
+addr = "0x38"
+fields = [
+    {name="ICF",   desc="Input Capture Flag",          rnge="5:5"},
+    {name="OCF_C", desc="Output Compare C Match Flag", rnge="3:3"},
+    {name="OCF_B", desc="Output Compare B Match Flag", rnge="2:2"},
+    {name="OCF_A", desc="Output Compare A Match Flag", rnge="1:1"},
+    {name="TOV",   desc="Timer Overflow Flag",         rnge="0:0"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "TCCR_A"
+desc = "Timer/Counter Control Register A"
+addr = "0x90"
+fields = [
+    {name="COM_A", desc="Compare Output Mode for Channel A", rnge="7:6"},
+    {name="COM_B", desc="Compare Output Mode for Channel B", rnge="5:4"},
+    {name="COM_C", desc="Compare Output Mode for Channel C", rnge="3:2"},
+    {name="WGM0",  desc="Waveform Generation Mode 1:0",      rnge="1:0"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "TCCR_B"
+desc = "Timer/Counter Control Register B"
+addr = "0x91"
+fields = [
+    {name="ICNC", desc="Input Capture Noise Canceler", rnge="7:7"},
+    {name="ICES", desc="Input Capture Edge Set",       rnge="6:6"},
+    {name="WGM2", desc="Waveform Generation Mode 3:2", rnge="4:3"},
+    {name="CS",   desc="Clock Select",                 rnge="2:0"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "TCCR_C"
+desc = "Timer/Counter Control Register C"
+addr = "0x92"
+fields = [
+    {name="FOC_A", desc="Force Output Compare for Channel A", rnge="7:7"},
+    {name="FOC_B", desc="Force Output Compare for Channel B", rnge="6:6"},
+    {name="FOC_C", desc="Force Output Compare for Channel C", rnge="5:5"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "TCNT_H"
+desc = "Timer/Counter Register High Byte"
+addr = "0x95"
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "TCNT_L"
+desc = "Timer/Counter Register Low Byte"
+addr = "0x94"
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "OCR_A_H"
+desc = "Output Compare Register A High Byte"
+addr = "0x99"
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "OCR_A_L"
+desc = "Output Compare Register A Low Byte"
+addr = "0x98"
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "OCR_B_H"
+desc = "Output Compare Register B High Byte"
+addr = "0x9B"
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "OCR_B_L"
+desc = "Output Compare Register B Low Byte"
+addr = "0x9A"
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "OCR_C_H"
+desc = "Output Compare Register C High Byte"
+addr = "0x9D"
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "OCR_C_L"
+desc = "Output Compare Register C Low Byte"
+addr = "0x9C"
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "ICR_H"
+desc = "Input Capture Register High Byte"
+addr = "0x87"
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "ICR_L"
+desc = "Input Capture Register Low Byte"
+addr = "0x86"
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "TIMSK"
+desc = "Timer Interrupt Mask Register"
+addr = "0x71"
+fields = [
+    {name="ICIE",   desc="Input Capture Interrupt Enable",          rnge="5:5"},
+    {name="OCIE_C", desc="Output Compare Match C Interrupt Enable", rnge="3:3"},
+    {name="OCIE_B", desc="Output Compare Match B Interrupt Enable", rnge="2:2"},
+    {name="OCIE_A", desc="Output Compare Match A Interrupt Enable", rnge="1:1"},
+    {name="TOIE",   desc="Timer Overflow Interrupt Enable",         rnge="0:0"},
+]
