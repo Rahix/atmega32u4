@@ -40,53 +40,6 @@ impl super::PORT {
         self.write(|w| w)
     }
 }
-#[doc = "Possible values of the field `PORTC6`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PORTC6R {
-    #[doc = "Pin is low"]
-    LOW,
-    #[doc = "Pin is high"]
-    HIGH,
-}
-impl PORTC6R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PORTC6R::LOW => false,
-            PORTC6R::HIGH => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PORTC6R {
-        match value {
-            false => PORTC6R::LOW,
-            true => PORTC6R::HIGH,
-        }
-    }
-    #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
-    pub fn is_low(&self) -> bool {
-        *self == PORTC6R::LOW
-    }
-    #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
-    pub fn is_high(&self) -> bool {
-        *self == PORTC6R::HIGH
-    }
-}
 #[doc = "Possible values of the field `PORTC7`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PORTC7R {
@@ -134,62 +87,51 @@ impl PORTC7R {
         *self == PORTC7R::HIGH
     }
 }
-#[doc = "Values that can be written to the field `PORTC6`"]
-pub enum PORTC6W {
+#[doc = "Possible values of the field `PORTC6`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PORTC6R {
     #[doc = "Pin is low"]
     LOW,
     #[doc = "Pin is high"]
     HIGH,
 }
-impl PORTC6W {
+impl PORTC6R {
+    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[inline]
+    pub fn bit_is_clear(&self) -> bool {
+        !self.bit()
+    }
+    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[inline]
+    pub fn bit_is_set(&self) -> bool {
+        self.bit()
+    }
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        match *self {
+            PORTC6R::LOW => false,
+            PORTC6R::HIGH => true,
+        }
+    }
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PORTC6W::LOW => false,
-            PORTC6W::HIGH => true,
+    pub fn _from(value: bool) -> PORTC6R {
+        match value {
+            false => PORTC6R::LOW,
+            true => PORTC6R::HIGH,
         }
     }
-}
-#[doc = r" Proxy"]
-pub struct _PORTC6W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PORTC6W<'a> {
-    #[doc = r" Writes `variant` to the field"]
+    #[doc = "Checks if the value of the field is `LOW`"]
     #[inline]
-    pub fn variant(self, variant: PORTC6W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
+    pub fn is_low(&self) -> bool {
+        *self == PORTC6R::LOW
     }
-    #[doc = "Pin is low"]
+    #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline]
-    pub fn low(self) -> &'a mut W {
-        self.variant(PORTC6W::LOW)
-    }
-    #[doc = "Pin is high"]
-    #[inline]
-    pub fn high(self) -> &'a mut W {
-        self.variant(PORTC6W::HIGH)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
-        self.w
+    pub fn is_high(&self) -> bool {
+        *self == PORTC6R::HIGH
     }
 }
 #[doc = "Values that can be written to the field `PORTC7`"]
@@ -250,20 +192,69 @@ impl<'a> _PORTC7W<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `PORTC6`"]
+pub enum PORTC6W {
+    #[doc = "Pin is low"]
+    LOW,
+    #[doc = "Pin is high"]
+    HIGH,
+}
+impl PORTC6W {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> bool {
+        match *self {
+            PORTC6W::LOW => false,
+            PORTC6W::HIGH => true,
+        }
+    }
+}
+#[doc = r" Proxy"]
+pub struct _PORTC6W<'a> {
+    w: &'a mut W,
+}
+impl<'a> _PORTC6W<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: PORTC6W) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "Pin is low"]
+    #[inline]
+    pub fn low(self) -> &'a mut W {
+        self.variant(PORTC6W::LOW)
+    }
+    #[doc = "Pin is high"]
+    #[inline]
+    pub fn high(self) -> &'a mut W {
+        self.variant(PORTC6W::HIGH)
+    }
+    #[doc = r" Sets the field bit"]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r" Clears the field bit"]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r" Writes raw bits to the field"]
+    #[inline]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        const MASK: bool = true;
+        const OFFSET: u8 = 6;
+        self.w.bits &= !((MASK as u8) << OFFSET);
+        self.w.bits |= ((value & MASK) as u8) << OFFSET;
+        self.w
+    }
+}
 impl R {
     #[doc = r" Value of the register as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
         self.bits
-    }
-    #[doc = "Bit 6 - Pin 6 Output"]
-    #[inline]
-    pub fn portc6(&self) -> PORTC6R {
-        PORTC6R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
     }
     #[doc = "Bit 7 - Pin 7 Output"]
     #[inline]
@@ -271,6 +262,15 @@ impl R {
         PORTC7R::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 7;
+            ((self.bits >> OFFSET) & MASK as u8) != 0
+        })
+    }
+    #[doc = "Bit 6 - Pin 6 Output"]
+    #[inline]
+    pub fn portc6(&self) -> PORTC6R {
+        PORTC6R::_from({
+            const MASK: bool = true;
+            const OFFSET: u8 = 6;
             ((self.bits >> OFFSET) & MASK as u8) != 0
         })
     }
@@ -287,14 +287,14 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 6 - Pin 6 Output"]
-    #[inline]
-    pub fn portc6(&mut self) -> _PORTC6W {
-        _PORTC6W { w: self }
-    }
     #[doc = "Bit 7 - Pin 7 Output"]
     #[inline]
     pub fn portc7(&mut self) -> _PORTC7W {
         _PORTC7W { w: self }
+    }
+    #[doc = "Bit 6 - Pin 6 Output"]
+    #[inline]
+    pub fn portc6(&mut self) -> _PORTC6W {
+        _PORTC6W { w: self }
     }
 }

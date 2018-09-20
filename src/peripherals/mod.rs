@@ -97,6 +97,25 @@ impl Deref for PORTF {
 }
 #[doc = "PORTF"]
 pub mod portf;
+#[doc = "TIMER0"]
+pub struct TIMER0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for TIMER0 {}
+impl TIMER0 {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const timer0::RegisterBlock {
+        53 as *const _
+    }
+}
+impl Deref for TIMER0 {
+    type Target = timer0::RegisterBlock;
+    fn deref(&self) -> &timer0::RegisterBlock {
+        unsafe { &*TIMER0::ptr() }
+    }
+}
+#[doc = "TIMER0"]
+pub mod timer0;
 #[allow(private_no_mangle_statics)]
 #[no_mangle]
 pub(crate) static mut DEVICE_PERIPHERALS: bool = false;
@@ -113,6 +132,8 @@ pub struct Peripherals {
     pub PORTE: PORTE,
     #[doc = "PORTF"]
     pub PORTF: PORTF,
+    #[doc = "TIMER0"]
+    pub TIMER0: TIMER0,
 }
 impl Peripherals {
     #[doc = r" Unchecked version of `Peripherals::take`"]
@@ -125,6 +146,7 @@ impl Peripherals {
             PORTD: PORTD { _marker: PhantomData },
             PORTE: PORTE { _marker: PhantomData },
             PORTF: PORTF { _marker: PhantomData },
+            TIMER0: TIMER0 { _marker: PhantomData },
         }
     }
 }

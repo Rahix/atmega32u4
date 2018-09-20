@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
+import textwrap
 import json
 
 def bit_fields(name, bits, *, doc, one, onedoc, zero, zerodoc):
     print(f"""\
           <fields>""")
-    for i in bits:
+    for i in reversed(bits):
         print(f"""\
             <field>
               <name>{name}{i}</name>
@@ -58,10 +59,10 @@ def main():
 
     for peripheral in data:
         ty = peripheral["type"]
-        name = peripheral["name"]
-        doc_name = peripheral["doc_name"]
-        base_addr = peripheral["base"]
         if ty == "port":
+            name = peripheral["name"]
+            doc_name = peripheral["doc_name"]
+            base_addr = peripheral["base"]
             char = peripheral["chr"]
             bits = peripheral["pins"]
             print(f"""\
@@ -70,7 +71,7 @@ def main():
       <baseAddress>{base_addr}</baseAddress>
 
       <addressBlock>
-        <offset>0</offset>
+        <offset>0x00</offset>
         <size>0x03</size>
         <usage>registers</usage>
       </addressBlock>
@@ -126,6 +127,9 @@ def main():
         </register>
       </registers>
     </peripheral>""")
+        elif ty == "ext":
+            p = open(peripheral["path"]).read().strip()
+            print(textwrap.indent(p, "    "))
 
     print("""\
   </peripherals>
