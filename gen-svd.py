@@ -79,7 +79,7 @@ def main():
       <registers>
         <register>
           <name>PIN</name>
-          <description>{doc_name} Input</description>
+          <description>{doc_name} Input Pins Address</description>
           <access>read-only</access>
           <addressOffset>0x00</addressOffset>""")
             bit_fields(
@@ -96,7 +96,7 @@ def main():
 
         <register>
           <name>DDR</name>
-          <description>{doc_name} Direction</description>
+          <description>{doc_name} Data Direction Register</description>
           <addressOffset>0x01</addressOffset>""")
             bit_fields(
                 f"DD{char}",
@@ -112,7 +112,7 @@ def main():
 
         <register>
           <name>PORT</name>
-          <description>{doc_name} Output</description>
+          <description>{doc_name} Output/Data Register</description>
           <addressOffset>0x02</addressOffset>""")
             bit_fields(
                 f"PORT{char}",

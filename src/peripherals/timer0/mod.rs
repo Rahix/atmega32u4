@@ -10,10 +10,13 @@ pub struct RegisterBlock {
     pub tccr0b: TCCR0B,
     #[doc = "0x11 - Timer0 Register"]
     pub tcnt0: TCNT0,
-    #[doc = "0x12 - Timer0 Register"]
+    #[doc = "0x12 - Timer0 Output Compare Register A"]
     pub ocr0a: OCR0A,
-    #[doc = "0x13 - Timer0 Register"]
+    #[doc = "0x13 - Timer0 Output Compare Register B"]
     pub ocr0b: OCR0B,
+    _reserved1: [u8; 37usize],
+    #[doc = "0x39 - Timer0 Interrupt Mask Register"]
+    pub timsk0: TIMSK0,
 }
 #[doc = "Timer0 Interrupt Flag Register"]
 pub struct TIFR0 {
@@ -39,15 +42,21 @@ pub struct TCNT0 {
 }
 #[doc = "Timer0 Register"]
 pub mod tcnt0;
-#[doc = "Timer0 Register"]
+#[doc = "Timer0 Output Compare Register A"]
 pub struct OCR0A {
     register: ::vcell::VolatileCell<u8>,
 }
-#[doc = "Timer0 Register"]
+#[doc = "Timer0 Output Compare Register A"]
 pub mod ocr0a;
-#[doc = "Timer0 Register"]
+#[doc = "Timer0 Output Compare Register B"]
 pub struct OCR0B {
     register: ::vcell::VolatileCell<u8>,
 }
-#[doc = "Timer0 Register"]
+#[doc = "Timer0 Output Compare Register B"]
 pub mod ocr0b;
+#[doc = "Timer0 Interrupt Mask Register"]
+pub struct TIMSK0 {
+    register: ::vcell::VolatileCell<u8>,
+}
+#[doc = "Timer0 Interrupt Mask Register"]
+pub mod timsk0;
