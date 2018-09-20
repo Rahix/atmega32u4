@@ -144,7 +144,7 @@ impl R {
         };
         COM0BR { bits }
     }
-    #[doc = "Bits 0:1 - Waveform Generation Mode, used together with WGM02 from TCCR0B"]
+    #[doc = "Bits 0:1 - Waveform Generation Mode (& TCCR0B::WGM02)"]
     #[inline]
     pub fn wgm0(&self) -> WGM0R {
         let bits = {
@@ -177,7 +177,7 @@ impl W {
     pub fn com0b(&mut self) -> _COM0BW {
         _COM0BW { w: self }
     }
-    #[doc = "Bits 0:1 - Waveform Generation Mode, used together with WGM02 from TCCR0B"]
+    #[doc = "Bits 0:1 - Waveform Generation Mode (& TCCR0B::WGM02)"]
     #[inline]
     pub fn wgm0(&mut self) -> _WGM0W {
         _WGM0W { w: self }

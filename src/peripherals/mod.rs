@@ -97,7 +97,7 @@ impl Deref for PORTF {
 }
 #[doc = "PORTF"]
 pub mod portf;
-#[doc = "TIMER0"]
+#[doc = "8-Bit Timer/Counter0 with PWM"]
 pub struct TIMER0 {
     _marker: PhantomData<*const ()>,
 }
@@ -114,7 +114,7 @@ impl Deref for TIMER0 {
         unsafe { &*TIMER0::ptr() }
     }
 }
-#[doc = "TIMER0"]
+#[doc = "8-Bit Timer/Counter0 with PWM"]
 pub mod timer0;
 #[allow(private_no_mangle_statics)]
 #[no_mangle]

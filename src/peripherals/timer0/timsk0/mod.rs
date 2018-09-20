@@ -198,7 +198,7 @@ impl R {
         };
         OCIE0AR { bits }
     }
-    #[doc = "Bit 0 - Overflow Interrupt Enable"]
+    #[doc = "Bit 0 - Timer Overflow Interrupt Enable"]
     #[inline]
     pub fn toie0(&self) -> TOIE0R {
         let bits = {
@@ -231,7 +231,7 @@ impl W {
     pub fn ocie0a(&mut self) -> _OCIE0AW {
         _OCIE0AW { w: self }
     }
-    #[doc = "Bit 0 - Overflow Interrupt Enable"]
+    #[doc = "Bit 0 - Timer Overflow Interrupt Enable"]
     #[inline]
     pub fn toie0(&mut self) -> _TOIE0W {
         _TOIE0W { w: self }

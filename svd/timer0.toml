@@ -1,0 +1,86 @@
+[info]
+name = "TIMER0"
+desc = "8-Bit Timer/Counter0 with PWM"
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "TIFR0"
+desc = "Timer0 Interrupt Flag Register"
+addr = "0x35"
+fields = [
+    {name="OCF0B", desc="Output Compare B Match Flag", rnge="2:2"},
+    {name="OCF0A", desc="Output Compare A Match Flag", rnge="1:1"},
+    {name="TOV0",  desc = "Timer Overflow Flag",       rnge="0:0"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "TCCR0A"
+desc = "Timer0 Control Register A"
+addr = "0x44"
+fields = [
+    {name="COM0A", desc="Compare Match Output A Mode",                    rnge="7:6"},
+    {name="COM0B", desc="Compare Match Output B Mode",                    rnge="5:4"},
+    {name="WGM0",  desc="Waveform Generation Mode (&amp; TCCR0B::WGM02)", rnge="1:0"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "TCCR0B"
+desc = "Timer0 Control Register B"
+addr = "0x45"
+
+[[reg.fields]]
+name = "FOC0A"
+desc = "Force Output Compare A"
+rnge = "7:7"
+cstm = """\
+<access>write-only</access>
+"""
+
+[[reg.fields]]
+name = "FOC0B"
+desc = "Force Output Compare B"
+rnge = "6:6"
+cstm = """\
+<access>write-only</access>
+"""
+
+[[reg.fields]]
+name = "WGM02"
+desc = "Waveform Generation Mode"
+rnge = "3:3"
+
+[[reg.fields]]
+name = "CS0"
+desc = "Clock Select"
+rnge = "2:0"
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "TCNT0"
+desc = "Timer0 Register"
+addr = "0x46"
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "OCR0A"
+desc = "Timer0 Output Compare Register A"
+addr = "0x47"
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "OCR0B"
+desc = "Timer0 Output Compare Register B"
+addr = "0x48"
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "TIMSK0"
+desc = "Timer0 Interrupt Mask Register"
+addr = "0x6E"
+fields = [
+    {name="OCIE0B", desc="Output Compare Match B Interrupt Enable", rnge="2:2"},
+    {name="OCIE0A", desc="Output Compare Match A Interrupt Enable", rnge="1:1"},
+    {name="TOIE0",  desc="Timer Overflow Interrupt Enable",         rnge="0:0"},
+]

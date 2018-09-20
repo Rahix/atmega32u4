@@ -178,7 +178,7 @@ impl R {
     pub fn bits(&self) -> u8 {
         self.bits
     }
-    #[doc = "Bit 2 - Timer0 Output Compare B Match Flag"]
+    #[doc = "Bit 2 - Output Compare B Match Flag"]
     #[inline]
     pub fn ocf0b(&self) -> OCF0BR {
         let bits = {
@@ -188,7 +188,7 @@ impl R {
         };
         OCF0BR { bits }
     }
-    #[doc = "Bit 1 - Timer0 Output Compare A Match Flag"]
+    #[doc = "Bit 1 - Output Compare A Match Flag"]
     #[inline]
     pub fn ocf0a(&self) -> OCF0AR {
         let bits = {
@@ -198,7 +198,7 @@ impl R {
         };
         OCF0AR { bits }
     }
-    #[doc = "Bit 0 - Timer0 Overflow Flag"]
+    #[doc = "Bit 0 - Timer Overflow Flag"]
     #[inline]
     pub fn tov0(&self) -> TOV0R {
         let bits = {
@@ -221,17 +221,17 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 2 - Timer0 Output Compare B Match Flag"]
+    #[doc = "Bit 2 - Output Compare B Match Flag"]
     #[inline]
     pub fn ocf0b(&mut self) -> _OCF0BW {
         _OCF0BW { w: self }
     }
-    #[doc = "Bit 1 - Timer0 Output Compare A Match Flag"]
+    #[doc = "Bit 1 - Output Compare A Match Flag"]
     #[inline]
     pub fn ocf0a(&mut self) -> _OCF0AW {
         _OCF0AW { w: self }
     }
-    #[doc = "Bit 0 - Timer0 Overflow Flag"]
+    #[doc = "Bit 0 - Timer Overflow Flag"]
     #[inline]
     pub fn tov0(&mut self) -> _TOV0W {
         _TOV0W { w: self }
