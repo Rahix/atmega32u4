@@ -1,0 +1,176 @@
+[info]
+name = "TIMER4"
+desc = "10-bit High Speed Timer/Counter4"
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "TIFR"
+desc = "Timer Interrupt Flag Register"
+addr = "0x39"
+fields = [
+    {name="OCF_D", desc="Output Compare Flag D", rnge="7:7"},
+    {name="OCF_A", desc="Output Compare Flag A", rnge="6:6"},
+    {name="OCF_B", desc="Output Compare Flag B", rnge="5:5"},
+    {name="TOV",   desc="Timer Overflow Flag",   rnge="2:2"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "TCCR_A"
+desc = "Timer/Counter Control Register A"
+addr = "0xC0"
+fields = [
+    {name="COM_A", desc="Compare Output Mode for Channel A", rnge="7:6"},
+    {name="COM_B", desc="Compare Output Mode for Channel B", rnge="5:4"},
+    {name="PWM_A", desc="Pulse Width Modulator A",           rnge="1:1"},
+    {name="PWM_B", desc="Pulse Width Modulator B",           rnge="0:0"},
+]
+
+[[reg.fields]]
+name = "FOC_A"
+desc = "Force Output Compare Match A"
+rnge = "3:3"
+cstm = """\
+<access>write-only</access>
+"""
+
+[[reg.fields]]
+name = "FOC_B"
+desc = "Force Output Compare Match B"
+rnge = "2:2"
+cstm = """\
+<access>write-only</access>
+"""
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "TCCR_B"
+desc = "Timer/Counter Control Register B"
+addr = "0xC1"
+fields = [
+    {name="PWM_X", desc="PWM Inversion Mode",  rnge="7:7"},
+    {name="DTPS",  desc="Dead Time Prescaler", rnge="5:4"},
+    {name="CS",    desc="Clock Source",        rnge="3:0"},
+]
+
+[[reg.fields]]
+name="PSR"
+desc="Prescaler Reset"
+rnge="6:6"
+cstm = """\
+<access>write-only</access>
+"""
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "TCCR_C"
+desc = "Timer/Counter Control Register C"
+addr = "0xC2"
+fields = [
+    {name="COM_A", desc="Compare Output Mode for Channel A", rnge="7:6"},
+    {name="COM_B", desc="Compare Output Mode for Channel B", rnge="5:4"},
+    {name="COM_D", desc="Compare Output Mode for Channel D", rnge="3:2"},
+    {name="PWM_D", desc="Pulse Width Modulator D",           rnge="0:0"},
+]
+
+[[reg.fields]]
+name = "FOC_D"
+desc = "Force Output Compare Match D"
+rnge = "1:1"
+cstm = """\
+<access>write-only</access>
+"""
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "TCCR_D"
+desc = "Timer/Counter Control Register D"
+addr = "0xC3"
+fields = [
+    {name="FPIE", desc="Fault Protection Interrupt Enable",         rnge="7:7"},
+    {name="FPEN", desc="Fault Protection Mode Enable",              rnge="6:6"},
+    {name="FPNC", desc="Fault Protection Noise Canceler",           rnge="5:5"},
+    {name="FPES", desc="Fault Protection Edge Select",              rnge="4:4"},
+    {name="FPAC", desc="Fault Protection Analog Comparator Enable", rnge="3:3"},
+    {name="FPF",  desc="Fault Protection Interrupt Flag",           rnge="2:2"},
+    {name="WGM",  desc="Waveform Generation Mode",                  rnge="1:0"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "TCCR_E"
+desc = "Timer/Counter Control Register E"
+addr = "0xC4"
+fields = [
+    {name="TLOCK", desc="Register Update Lock", rnge="7:7", cstm="<access>read-only</access>\n"},
+    {name="ENHC",  desc="Enhanced Compare/PWM Mode", rnge="6:6", cstm="<access>read-only</access>\n"},
+    {name="OCOE5",  desc="Output Compare Override Enable (PD7)", rnge="5:5"},
+    {name="OCOE4",  desc="Output Compare Override Enable (PD6)", rnge="4:4"},
+    {name="OCOE3",  desc="Output Compare Override Enable (PB6)", rnge="3:3"},
+    {name="OCOE2",  desc="Output Compare Override Enable (PB5)", rnge="2:2"},
+    {name="OCOE1",  desc="Output Compare Override Enable (PC7)", rnge="1:1"},
+    {name="OCOE0",  desc="Output Compare Override Enable (PC6)", rnge="0:0"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "TCNT"
+desc = "Timer/Counter Register"
+addr = "0xBE"
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "TCH"
+desc = "Timer/Counter High Byte"
+addr = "0xBF"
+fields = [
+    {name="TC10",  desc="Additional MSB Bit for 11-Bit Access", rnge="2:2", cstm="<access>read-only</access>\n"},
+    {name="TC98",  desc="Two MSB bits of the 10-bit accesses", rnge="1:0"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "OCR_A"
+desc = "Output Compare Register A"
+addr = "0xCF"
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "OCR_B"
+desc = "Output Compare Register B"
+addr = "0xD0"
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "OCR_C"
+desc = "Output Compare Register B"
+addr = "0xD1"
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "OCR_D"
+desc = "Output Compare Register B"
+addr = "0xD2"
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "TIMSK"
+desc = "Timer Interrupt Mask Register"
+addr = "0x72"
+fields = [
+    {name="OCIE_D", desc="Output Compare Match D Interrupt Enable", rnge="7:7"},
+    {name="OCIE_A", desc="Output Compare Match A Interrupt Enable", rnge="6:6"},
+    {name="OCIE_B", desc="Output Compare Match B Interrupt Enable", rnge="5:5"},
+    {name="TOIE",   desc="Timer Overflow Interrupt Enable",         rnge="2:2"},
+]
+
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "DT"
+desc = "Dead Time Value"
+addr = "0xD4"
+fields = [
+    {name="DT_H", desc="Dead Time Value for OC4x Output", rnge="7:4"},
+    {name="DT_L", desc="Dead Time Value for ~OC4x Output", rnge="3:0"},
+]
