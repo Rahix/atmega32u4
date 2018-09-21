@@ -8,7 +8,7 @@ license = "MIT OR Apache-2.0"
 repository = "https://github.com/Rahix/atmega32u4"
 readme = "README.md"
 
-keywords = ["atmega", "avr", "arduino", "atmega32u4", "register", "peripheral"]
+keywords = ["atmega", "avr", "arduino", "register", "peripheral"]
 categories = ["embedded", "hardware-support", "no-std"]
 
 [dependencies]
