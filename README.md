@@ -6,15 +6,15 @@ Low level access to ATmega32U4 registers.  Refer to the ATmega32U4 datasheet for
 This crate not yet done and support for a lot of peripherals is still missing. The following have been
 implemented already:
 
-[x] `PORTB`: Digital IO
-[x] `PORTC`: Digital IO
-[x] `PORTD`: Digital IO
-[x] `PORTE`: Digital IO
-[x] `PORTF`: Digital IO
-[x] `TIMER0`: 8-bit Timer/Counter0 with PWM
-[x] `TIMER1`: 16-bit Timer/Counter1
-[x] `TIMER3`: 16-bit Timer/Counter3
-[x] `TIMER4`: 10-bit High Speed Timer/Counter4
+- [x] `PORTB`: Digital IO
+- [x] `PORTC`: Digital IO
+- [x] `PORTD`: Digital IO
+- [x] `PORTE`: Digital IO
+- [x] `PORTF`: Digital IO
+- [x] `TIMER0`: 8-bit Timer/Counter0 with PWM
+- [x] `TIMER1`: 16-bit Timer/Counter1
+- [x] `TIMER3`: 16-bit Timer/Counter3
+- [x] `TIMER4`: 10-bit High Speed Timer/Counter4
 
 If support for a peripheral you need is missing, please open an issue or implement it yourself and send
 a pull request ;)
