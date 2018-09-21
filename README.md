@@ -20,7 +20,7 @@ If support for a peripheral you need is missing, please open an issue or impleme
 a pull request ;)
 
 ## Generating this crate
-This crate is built using [svd2rust]().  However, as there are no svd files available for *ATmega32U4*,
+This crate is built using [svd2rust](https://github.com/rust-embedded/svd2rust).  However, as there are no svd files available for *ATmega32U4*,
 a python script is used to generate the svd file.  Take a look at `gen-svd.py` and `svd/peripheral.py`.
 
 Peripherals can be specified in a toml format which should make adding new ones easier.  Use the existing
