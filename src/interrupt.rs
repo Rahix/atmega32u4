@@ -1,6 +1,17 @@
+//! Interrupts
+//!
+//! For the most part, [free] is what you want:
+//!
+//! ```
+//! atmega32u4::interrupt::free(|cs| {
+//!     // Interrupts are disabled here
+//! })
+//! ```
+
 pub use bare_metal::{CriticalSection, Mutex, Nr};
 
 #[inline]
+/// Disables all interrupts
 pub fn disable() {
     unsafe {
         asm!(
@@ -10,6 +21,11 @@ pub fn disable() {
 }
 
 #[inline]
+/// Enables all the interrupts
+///
+/// # Safety
+///
+/// - Do not call this function inside an `interrupt::free` critical section
 pub fn enable() {
     unsafe {
         asm!(

@@ -1,9 +1,8 @@
-// #![deny(missing_docs)]
-#![allow(non_camel_case_types)]
+//! Low level access to ATmega32U4 registers
 #![no_std]
-#![feature(const_fn)]
-#![feature(try_from)]
-#![feature(asm)]
+#![feature(asm, const_fn, try_from)]
+#![allow(non_camel_case_types)]
+#![deny(missing_docs)]
 
 extern crate vcell;
 extern crate bare_metal;
