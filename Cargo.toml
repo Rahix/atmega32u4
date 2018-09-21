@@ -1,7 +1,15 @@
 [package]
-authors = ["Rahix <rahix@rahix.de>"]
 name = "atmega32u4"
 version = "0.1.0"
+authors = ["Rahix <rahix@rahix.de>"]
+description = "Low level access to ATmega32U4 registers"
+license = "MIT OR Apache-2.0"
+
+repository = "https://github.com/Rahix/atmega32u4"
+readme = "README.md"
+
+keywords = ["atmega", "avr", "arduino", "atmega32u4", "register", "peripheral"]
+categories = ["embedded", "hardware-support", "no-std"]
 
 [dependencies]
 bare-metal = "0.2.3"
