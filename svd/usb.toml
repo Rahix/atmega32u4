@@ -46,3 +46,74 @@ addr = "0xDA"
 fields = [
     {name="VBUSTI", desc="IVBUS Transition Interrupt Flag", rnge="0:0"},
 ]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "UDCON"
+desc = "USB Device Control"
+addr = "0xE0"
+cstm="<resetValue>0x01</resetValue>"
+fields = [
+    {name="RSTCPU", desc="Reset CPU Bit", rnge="3:3", cstm="<access>read-only</access>"},
+    {name="LSM", desc="Low Speed Mode Selection", rnge="2:2"},
+    {name="RMWKUP", desc="Remote Wake-Up", rnge="1:1"},
+    {name="DETACH", desc="Detach Device", rnge="0:0"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "UDINT"
+desc = "USB Device Interrupt"
+addr = "0xE1"
+fields = [
+    {name="UPRSMI", desc="Upstream Resume Interrupt Flag", rnge="6:6"},
+    {name="EORSMI", desc="End Of Resume Interrupt Flag", rnge="5:5"},
+    {name="WAKEUPI", desc="Wake-up CPU Interrupt Flag", rnge="4:4"},
+    {name="EORSTI", desc="End Of Reset Interrupt Flag", rnge="3:3"},
+    {name="SOFI", desc="Start Of Frame Interrupt Flag", rnge="2:2"},
+    {name="SUSPI", desc="Suspend Interrupt Flag", rnge="0:0"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "UDIEN"
+desc = "USB Device Interrupt Enable"
+addr = "0xE2"
+fields = [
+    {name="UPRSME", desc="Upstream Resume Interrupt Enable", rnge="6:6"},
+    {name="EORSME", desc="End Of Resume Interrupt Enable", rnge="5:5"},
+    {name="WAKEUPE", desc="Wake-up CPU Interrupt Enable", rnge="4:4"},
+    {name="EORSTE", desc="End Of Reset Interrupt Enable", rnge="3:3"},
+    {name="SOFE", desc="Start Of Frame Interrupt Enable", rnge="2:2"},
+    {name="SUSPE", desc="Suspend Interrupt Enable", rnge="0:0"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "UDADDR"
+desc = "USB Device Address"
+addr = "0xE3"
+fields = [
+    {name="ADDEN", desc="Address Enable", rnge="7:7", cstm="<access>write-only</access>"},
+    {name="UADD", desc="USB Address", rnge="6:0"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "UDFNUMH"
+desc = "USB Frame Number High"
+addr = "0xE5"
+cstm = "<access>read-only</access>"
+fields = [
+    {name="FNUM", desc="Frame Number (High Bits)", rnge="2:0"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "UDFNUML"
+desc = "USB Frame Number Low"
+addr = "0xE4"
+cstm = "<access>read-only</access>"
+fields = [
+    {name="FNUM", desc="Frame Number (Low Bits)", rnge="7:0"},
+]
