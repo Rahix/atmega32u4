@@ -1,4 +1,5 @@
 import toml
+import textwrap
 
 def group_blocks(registers):
     blocks = []
@@ -55,6 +56,9 @@ def peripheral(filename):
           <description>{reg["desc"]}</description>
           <addressOffset>{hex(reg["addr"]-base)}</addressOffset>""")
 
+            if "cstm" in reg:
+                print(textwrap.indent(reg["cstm"].strip(), "          "))
+
             if "fields" in reg:
                 print("""
           <fields>""")
@@ -63,7 +67,7 @@ def peripheral(filename):
                     custom = (
                         ""
                         if not "cstm" in field
-                        else "              " + field["cstm"]
+                        else textwrap.indent(field["cstm"].strip(), "              ") + "\n"
                     )
                     print(f"""\
             <field>
@@ -84,4 +88,5 @@ def peripheral(filename):
 
 
 if __name__ == "__main__":
-    peripheral("svd/timer0.toml")
+    import sys
+    peripheral(sys.argv[1])
