@@ -1,0 +1,48 @@
+[info]
+name = "USB"
+desc = "USB Controller"
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "UHWCON"
+desc = "USB Hardware Control"
+addr = "0xD7"
+fields = [
+    {name="UVREGE", desc="USB pad regulator enable", rnge="0:0"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "USBCON"
+desc = "USB Control"
+addr = "0xD8"
+cstm="<resetValue>0x20</resetValue>"
+fields = [
+    {name="USBE", desc="USB macro Enable", rnge="7:7"},
+    {name="FRZCLK", desc="Freeze USB Clock", rnge="5:5"},
+    {name="OTGPADE", desc="VBUS Pad Enable", rnge="4:4"},
+    {name="VBUSTE", desc="VBUS Transition Interrupt Enable", rnge="0:0"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "USBSTA"
+desc = "USB Status"
+addr = "0xD9"
+cstm="""\
+<access>read-only</access>
+<resetValue>0x02</resetValue>
+"""
+fields = [
+    {name="ID", desc="ID Status (Always 1)", rnge="1:1"},
+    {name="VBUS", desc="VBus Flag", rnge="0:0"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "USBINT"
+desc = "USB Interrupt"
+addr = "0xDA"
+fields = [
+    {name="VBUSTI", desc="IVBUS Transition Interrupt Flag", rnge="0:0"},
+]
