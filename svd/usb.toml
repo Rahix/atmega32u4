@@ -117,3 +117,70 @@ cstm = "<access>read-only</access>"
 fields = [
     {name="FNUM", desc="Frame Number (Low Bits)", rnge="7:0"},
 ]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "UDMFN"
+desc = "USB Frame Number CRC Error Flag"
+addr = "0xE6"
+cstm = "<access>read-only</access>"
+fields = [
+    {name="FNCERR", desc="Frame Number CRC Error Flag", rnge="4:4"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "UENUM"
+desc = "USB Endpoint Number"
+addr = "0xE9"
+fields = [
+    {name="EPNUM", desc="Endpoint Number", rnge="2:0"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "UERST"
+desc = "USB Endpoint Reset"
+addr = "0xEA"
+fields = [
+    {name="EPRST6", desc="Endpoint 6 FIFO Reset", rnge="6:6"},
+    {name="EPRST5", desc="Endpoint 5 FIFO Reset", rnge="5:5"},
+    {name="EPRST4", desc="Endpoint 4 FIFO Reset", rnge="4:4"},
+    {name="EPRST3", desc="Endpoint 3 FIFO Reset", rnge="3:3"},
+    {name="EPRST2", desc="Endpoint 2 FIFO Reset", rnge="2:2"},
+    {name="EPRST1", desc="Endpoint 1 FIFO Reset", rnge="1:1"},
+    {name="EPRST0", desc="Endpoint 0 FIFO Reset", rnge="0:0"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "UECONX"
+desc = "USB Endpoint Control"
+addr = "0xEB"
+fields = [
+    {name="STALLRQ", desc="Stall Request Handshake", rnge="5:5", cstm="<access>write-only</access>"},
+    {name="STALLRQC", desc="Stall Request Clear Handshake", rnge="4:4", cstm="<access>write-only</access>"},
+    {name="RSTDT", desc="Reset Data Toggle", rnge="3:3", cstm="<access>write-only</access>"},
+    {name="EPEN", desc="Endpoint Enable", rnge="0:0"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "UECFG0X"
+desc = "USB Endpoint Configuration 0"
+addr = "0xEC"
+fields = [
+    {name="EPTYPE", desc="Endpoint Type", rnge="7:6"},
+    {name="EPDIR", desc="Endpoint Direction", rnge="0:0"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "UECFG1X"
+desc = "USB Endpoint Configuration 1"
+addr = "0xED"
+fields = [
+    {name="EPSIZE", desc="Endpoint Size", rnge="6:4"},
+    {name="EPBK", desc="Endpoint Bank", rnge="3:2"},
+    {name="ALLOC", desc="Endpoint Allocation", rnge="1:1"},
+]
