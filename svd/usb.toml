@@ -184,3 +184,98 @@ fields = [
     {name="EPBK", desc="Endpoint Bank", rnge="3:2"},
     {name="ALLOC", desc="Endpoint Allocation", rnge="1:1"},
 ]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "UESTA0X"
+desc = "USB Endpoint Status 0"
+addr = "0xEE"
+cstm="<access>read-only</access>"
+fields = [
+    {name="CFGOK", desc="Configuration Status Flag", rnge="7:7"},
+    {name="OVERFI", desc="Overflow Error Interrupt Flag", rnge="6:6", cstm="<access>read-write</access>"},
+    {name="UNDERFI", desc="Underflow Error Interrupt Flag", rnge="5:5", cstm="<access>read-write</access>"},
+    {name="DTSEQ", desc="Data Toggle Sequencing Flag", rnge="3:2"},
+    {name="NBUSYBK", desc="Busy Bank Flag", rnge="1:0"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "UESTA1X"
+desc = "USB Endpoint Status 1"
+addr = "0xEF"
+cstm="<access>read-only</access>"
+fields = [
+    {name="CTRLDIR", desc="Control Direction Flag", rnge="2:2"},
+    {name="CURRBK", desc="Current Bank Flag", rnge="1:0"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "UEINTX"
+desc = "USB Endpoint Interrupt"
+addr = "0xE8"
+fields = [
+    {name="FIFOCON", desc="FIFO Control Bit", rnge="7:7"},
+    {name="NAKINI", desc="NAK IN Received Interrupt Flag", rnge="6:6"},
+    {name="RWAL", desc="Read/Write Allowed Flag", rnge="5:5"},
+    {name="NAKOUTI", desc="NAK OUT Received Interrupt Flag", rnge="4:4"},
+    {name="RXSTPI", desc="Received Setup Interrupt Flag", rnge="3:3"},
+    {name="RXOUTI", desc="Received Out Data Interrupt Flag", rnge="2:2"},
+    {name="STALLEDI", desc="STALLEDI Interrupt Flag", rnge="1:1"},
+    {name="TXINI", desc="Transmitter Ready Interrupt Flag", rnge="0:0"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "UEIENX"
+desc = "USB Endpoint Interrupt Enable"
+addr = "0xF0"
+fields = [
+    {name="FLERRE", desc="Flow Error Interrupt Enable Flag", rnge="7:7"},
+    {name="NAKINE", desc="NAK IN Interrupt Enable Flag", rnge="6:6"},
+    {name="NAKOUTE", desc="NAK OUT Interrupt Enable Flag", rnge="4:4"},
+    {name="RXSTPE", desc="Received Setup Interrupt Enable Flag", rnge="3:3"},
+    {name="RXOUTE", desc="Received Out Data Interrupt Enable Flag", rnge="2:2"},
+    {name="STALLEDE", desc="Stalled Interrupt Enable Flag", rnge="1:1"},
+    {name="TXINE", desc="Transmitter Ready Interrupt Enable Flag", rnge="0:0"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "UEDATX"
+desc = "USB Endpoint Data"
+addr = "0xF1"
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "UEBCHX"
+desc = "USB Endpoint Byte Count High"
+addr = "0xF3"
+cstm="<access>read-only</access>"
+fields = [
+    {name="BYCT_H", desc="Byte Count High Bits", rnge="2:0"},
+]
+
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "UEBCLX"
+desc = "USB Endpoint Byte Count Low"
+addr = "0xF2"
+cstm="<access>read-only</access>"
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "UEINT"
+desc = "USB Endpoint Interrupts"
+addr = "0xF4"
+fields = [
+    {name="D6", desc="Endpoint 6 Interrupt Bit", rnge="6:6"},
+    {name="D5", desc="Endpoint 5 Interrupt Bit", rnge="5:5"},
+    {name="D4", desc="Endpoint 4 Interrupt Bit", rnge="4:4"},
+    {name="D3", desc="Endpoint 3 Interrupt Bit", rnge="3:3"},
+    {name="D2", desc="Endpoint 2 Interrupt Bit", rnge="2:2"},
+    {name="D1", desc="Endpoint 1 Interrupt Bit", rnge="1:1"},
+    {name="D0", desc="Endpoint 0 Interrupt Bit", rnge="0:0"},
+]
