@@ -2,6 +2,31 @@
 name = "TIMER1"
 desc = "16-Bit Timer/Counter1"
 
+[[int]]
+name = "TIMER1_CAPT"
+desc = "Timer/Counter1 Capture Event"
+vect = 16
+
+[[int]]
+name = "TIMER1_COMPA"
+desc = "Timer/Counter1 Compare Match A"
+vect = 17
+
+[[int]]
+name = "TIMER1_COMPB"
+desc = "Timer/Counter1 Compare Match B"
+vect = 18
+
+[[int]]
+name = "TIMER1_COMPC"
+desc = "Timer/Counter1 Compare Match C"
+vect = 19
+
+[[int]]
+name = "TIMER1_OVF"
+desc = "Timer/Counter1 Overflow"
+vect = 20
+
 #---------------------------------------------------------------------#
 [[reg]]
 name = "TIFR"

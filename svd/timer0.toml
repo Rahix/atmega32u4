@@ -2,6 +2,21 @@
 name = "TIMER0"
 desc = "8-Bit Timer/Counter0 with PWM"
 
+[[int]]
+name = "TIMER0_COMPA"
+desc = "Timer/Counter0 Compare Match A"
+vect = 21
+
+[[int]]
+name = "TIMER0_COMPB"
+desc = "Timer/Counter0 Compare Match B"
+vect = 22
+
+[[int]]
+name = "TIMER0_OVF"
+desc = "Timer/Counter0 Overflow"
+vect = 23
+
 #---------------------------------------------------------------------#
 [[reg]]
 name = "TIFR"

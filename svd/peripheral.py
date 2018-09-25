@@ -37,6 +37,18 @@ def peripheral(filename):
       <baseAddress>{hex(base)}</baseAddress>
 """)
 
+    if "int" in data:
+        for interrupt in data["int"]:
+            print(f"""\
+      <interrupt>
+        <name>{interrupt["name"]}</name>
+        <description>{interrupt["desc"]}</description>
+        <value>{interrupt["vect"]}</value>
+      </interrupt>""")
+
+        print("")
+
+
     for block in blocks:
         print(f"""\
       <addressBlock>

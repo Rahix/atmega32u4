@@ -46,6 +46,7 @@ def main():
     <fpuPresent>true</fpuPresent>
     <nvicPrioBits>8</nvicPrioBits>
     <vendorSystickConfig>false</vendorSystickConfig>
+    <deviceNumInterrupts>43</deviceNumInterrupts>
   </cpu>
 
   <addressUnitBits>8</addressUnitBits>

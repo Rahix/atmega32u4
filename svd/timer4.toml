@@ -2,6 +2,31 @@
 name = "TIMER4"
 desc = "10-bit High Speed Timer/Counter4"
 
+[[int]]
+name = "TIMER4_COMPA"
+desc = "Timer/Counter4 Compare Match A"
+vect = 38
+
+[[int]]
+name = "TIMER4_COMPB"
+desc = "Timer/Counter4 Compare Match B"
+vect = 39
+
+[[int]]
+name = "TIMER4_COMPD"
+desc = "Timer/Counter4 Compare Match D"
+vect = 40
+
+[[int]]
+name = "TIMER4_OVF"
+desc = "Timer/Counter4 Overflow"
+vect = 41
+
+[[int]]
+name = "TIMER4_FPF"
+desc = "Timer/Counter4 Fault Protection Interrupt"
+vect = 42
+
 #---------------------------------------------------------------------#
 [[reg]]
 name = "TIFR"

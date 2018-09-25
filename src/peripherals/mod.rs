@@ -2,6 +2,9 @@ use core::ops::Deref;
 use core::marker::PhantomData;
 #[doc = r" Number available in the NVIC for configuring priority"]
 pub const NVIC_PRIO_BITS: u8 = 8;
+#[doc(hidden)]
+pub mod interrupt;
+pub use self::interrupt::Interrupt;
 #[doc = "PORTB"]
 pub struct PORTB {
     _marker: PhantomData<*const ()>,
