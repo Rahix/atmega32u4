@@ -2,6 +2,16 @@
 name = "USB"
 desc = "USB Controller"
 
+[[int]]
+name = "USB_GEN"
+desc = "USB General Interrupt Request"
+vect = 10
+
+[[int]]
+name = "USB_COM"
+desc = "USB Endpoint/Pipe Interrupt Communication Request"
+vect = 11
+
 #---------------------------------------------------------------------#
 [[reg]]
 name = "UHWCON"
