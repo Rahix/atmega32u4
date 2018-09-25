@@ -1,6 +1,6 @@
 //! Interrupts
 //!
-//! For the most part, [free] is what you want:
+//! For the most part, [interrupt::free] is what you want:
 //!
 //! ```
 //! atmega32u4::interrupt::free(|cs| {
