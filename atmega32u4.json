@@ -54,5 +54,9 @@
     {
         "type": "toml",
         "path": "svd/timer4.toml"
+    },
+    {
+        "type": "toml",
+        "path": "svd/ext_int.toml"
     }
 ]

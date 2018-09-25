@@ -1,6 +1,16 @@
 use core::convert::TryFrom;
 #[doc = r" Enumeration of all the interrupts"]
 pub enum Interrupt {
+    #[doc = "1 - External Interrupt 0"]
+    INT0,
+    #[doc = "2 - External Interrupt 1"]
+    INT1,
+    #[doc = "3 - External Interrupt 2"]
+    INT2,
+    #[doc = "4 - External Interrupt 3"]
+    INT3,
+    #[doc = "7 - External Interrupt 6"]
+    INT6,
     #[doc = "16 - Timer/Counter1 Capture Event"]
     TIMER1_CAPT,
     #[doc = "17 - Timer/Counter1 Compare Match A"]
@@ -42,6 +52,11 @@ unsafe impl ::bare_metal::Nr for Interrupt {
     #[inline]
     fn nr(&self) -> u8 {
         match *self {
+            Interrupt::INT0 => 1,
+            Interrupt::INT1 => 2,
+            Interrupt::INT2 => 3,
+            Interrupt::INT3 => 4,
+            Interrupt::INT6 => 7,
             Interrupt::TIMER1_CAPT => 16,
             Interrupt::TIMER1_COMPA => 17,
             Interrupt::TIMER1_COMPB => 18,
@@ -70,6 +85,11 @@ impl TryFrom<u8> for Interrupt {
     #[inline]
     fn try_from(value: u8) -> Result<Self, Self::Error> {
         match value {
+            1 => Ok(Interrupt::INT0),
+            2 => Ok(Interrupt::INT1),
+            3 => Ok(Interrupt::INT2),
+            4 => Ok(Interrupt::INT3),
+            7 => Ok(Interrupt::INT6),
             16 => Ok(Interrupt::TIMER1_CAPT),
             17 => Ok(Interrupt::TIMER1_COMPA),
             18 => Ok(Interrupt::TIMER1_COMPB),

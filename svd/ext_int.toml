@@ -1,0 +1,76 @@
+[info]
+name = "EXT_INT"
+desc = "External Interrupts"
+
+[[int]]
+name = "INT0"
+desc = "External Interrupt 0"
+vect = 1
+
+[[int]]
+name = "INT1"
+desc = "External Interrupt 1"
+vect = 2
+
+[[int]]
+name = "INT2"
+desc = "External Interrupt 2"
+vect = 3
+
+[[int]]
+name = "INT3"
+desc = "External Interrupt 3"
+vect = 4
+
+[[int]]
+name = "INT6"
+desc = "External Interrupt 6"
+vect = 7
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "EICRA"
+desc = "External Interrupt Control Register A"
+addr = "0x69"
+fields = [
+    {name="ISC3", desc="External Interrupt 3 Sense Control Bits", rnge="7:6"},
+    {name="ISC2", desc="External Interrupt 2 Sense Control Bits", rnge="5:4"},
+    {name="ISC1", desc="External Interrupt 1 Sense Control Bits", rnge="3:2"},
+    {name="ISC0", desc="External Interrupt 0 Sense Control Bits", rnge="1:0"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "EICRB"
+desc = "External Interrupt Control Register B"
+addr = "0x6A"
+fields = [
+    {name="ISC6", desc="External Interrupt 6 Sense Control Bits", rnge="5:4"},
+]
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "EIMSK"
+desc = "External Interrupt Mask Register"
+addr = "0x3D"
+fields = [
+    {name="INT6", desc="Interrupt 6 Enable", rnge="6:6"},
+    {name="INT3", desc="Interrupt 3 Enable", rnge="3:3"},
+    {name="INT2", desc="Interrupt 2 Enable", rnge="2:2"},
+    {name="INT1", desc="Interrupt 1 Enable", rnge="1:1"},
+    {name="INT0", desc="Interrupt 0 Enable", rnge="0:0"},
+]
+
+
+#---------------------------------------------------------------------#
+[[reg]]
+name = "EIFR"
+desc = "External Interrupt Flag Register"
+addr = "0x3C"
+fields = [
+    {name="INTF6", desc="Interrupt 6 Flag", rnge="6:6"},
+    {name="INTF3", desc="Interrupt 3 Flag", rnge="3:3"},
+    {name="INTF2", desc="Interrupt 2 Flag", rnge="2:2"},
+    {name="INTF1", desc="Interrupt 1 Flag", rnge="1:1"},
+    {name="INTF0", desc="Interrupt 0 Flag", rnge="0:0"},
+]

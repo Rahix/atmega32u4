@@ -176,6 +176,25 @@ impl Deref for TIMER4 {
 }
 #[doc = "10-bit High Speed Timer/Counter4"]
 pub mod timer4;
+#[doc = "External Interrupts"]
+pub struct EXT_INT {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for EXT_INT {}
+impl EXT_INT {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const ext_int::RegisterBlock {
+        60 as *const _
+    }
+}
+impl Deref for EXT_INT {
+    type Target = ext_int::RegisterBlock;
+    fn deref(&self) -> &ext_int::RegisterBlock {
+        unsafe { &*EXT_INT::ptr() }
+    }
+}
+#[doc = "External Interrupts"]
+pub mod ext_int;
 #[allow(private_no_mangle_statics)]
 #[no_mangle]
 pub(crate) static mut DEVICE_PERIPHERALS: bool = false;
@@ -200,6 +219,8 @@ pub struct Peripherals {
     pub TIMER3: TIMER3,
     #[doc = "TIMER4"]
     pub TIMER4: TIMER4,
+    #[doc = "EXT_INT"]
+    pub EXT_INT: EXT_INT,
 }
 impl Peripherals {
     #[doc = r" Unchecked version of `Peripherals::take`"]
@@ -216,6 +237,7 @@ impl Peripherals {
             TIMER1: TIMER1 { _marker: PhantomData },
             TIMER3: TIMER3 { _marker: PhantomData },
             TIMER4: TIMER4 { _marker: PhantomData },
+            EXT_INT: EXT_INT { _marker: PhantomData },
         }
     }
 }
