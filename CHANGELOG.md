@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased]
+
+## [0.1.2] - 2018-09-26
 ### Added
 - Support for `interrupt!` macro to define custom interrupt handlers
 - `USB` and `EXT_INT` peripherals

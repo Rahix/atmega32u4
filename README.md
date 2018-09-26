@@ -15,6 +15,8 @@ implemented already:
 - [x] `TIMER1`: 16-bit Timer/Counter1
 - [x] `TIMER3`: 16-bit Timer/Counter3
 - [x] `TIMER4`: 10-bit High Speed Timer/Counter4
+- [x] `EXT_INT`: External Interrupts
+- [x] `USB`: USB Controller
 
 If support for a peripheral you need is missing, please open an issue or implement it yourself and send
 a pull request ;)
