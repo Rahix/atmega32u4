@@ -11,6 +11,10 @@ pub enum Interrupt {
     INT3,
     #[doc = "7 - External Interrupt 6"]
     INT6,
+    #[doc = "10 - USB General Interrupt Request"]
+    USB_GEN,
+    #[doc = "11 - USB Endpoint/Pipe Interrupt Communication Request"]
+    USB_COM,
     #[doc = "16 - Timer/Counter1 Capture Event"]
     TIMER1_CAPT,
     #[doc = "17 - Timer/Counter1 Compare Match A"]
@@ -57,6 +61,8 @@ unsafe impl ::bare_metal::Nr for Interrupt {
             Interrupt::INT2 => 3,
             Interrupt::INT3 => 4,
             Interrupt::INT6 => 7,
+            Interrupt::USB_GEN => 10,
+            Interrupt::USB_COM => 11,
             Interrupt::TIMER1_CAPT => 16,
             Interrupt::TIMER1_COMPA => 17,
             Interrupt::TIMER1_COMPB => 18,
@@ -90,6 +96,8 @@ impl TryFrom<u8> for Interrupt {
             3 => Ok(Interrupt::INT2),
             4 => Ok(Interrupt::INT3),
             7 => Ok(Interrupt::INT6),
+            10 => Ok(Interrupt::USB_GEN),
+            11 => Ok(Interrupt::USB_COM),
             16 => Ok(Interrupt::TIMER1_CAPT),
             17 => Ok(Interrupt::TIMER1_COMPA),
             18 => Ok(Interrupt::TIMER1_COMPB),

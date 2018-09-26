@@ -195,6 +195,25 @@ impl Deref for EXT_INT {
 }
 #[doc = "External Interrupts"]
 pub mod ext_int;
+#[doc = "USB Controller"]
+pub struct USB {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for USB {}
+impl USB {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const usb::RegisterBlock {
+        215 as *const _
+    }
+}
+impl Deref for USB {
+    type Target = usb::RegisterBlock;
+    fn deref(&self) -> &usb::RegisterBlock {
+        unsafe { &*USB::ptr() }
+    }
+}
+#[doc = "USB Controller"]
+pub mod usb;
 #[allow(private_no_mangle_statics)]
 #[no_mangle]
 pub(crate) static mut DEVICE_PERIPHERALS: bool = false;
@@ -221,6 +240,8 @@ pub struct Peripherals {
     pub TIMER4: TIMER4,
     #[doc = "EXT_INT"]
     pub EXT_INT: EXT_INT,
+    #[doc = "USB"]
+    pub USB: USB,
 }
 impl Peripherals {
     #[doc = r" Unchecked version of `Peripherals::take`"]
@@ -238,6 +259,7 @@ impl Peripherals {
             TIMER3: TIMER3 { _marker: PhantomData },
             TIMER4: TIMER4 { _marker: PhantomData },
             EXT_INT: EXT_INT { _marker: PhantomData },
+            USB: USB { _marker: PhantomData },
         }
     }
 }
