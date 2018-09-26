@@ -27,16 +27,24 @@ name = "INT6"
 desc = "External Interrupt 6"
 vect = 7
 
+[val.sense_control]
+values = [
+    {valu=0, name="LVL_LOW", desc="The low level of INTn generates an interrupt request"},
+    {valu=1, name="EDGE_BOTH", desc="Any edge of INTn generates asynchronously an interrupt request"},
+    {valu=2, name="EDGE_FALLING", desc="The falling edge of INTn generates asynchronously an interrupt request"},
+    {valu=3, name="EDGE_RISING", desc="The rising edge of INTn generates asynchronously an interrupt request"},
+]
+
 #---------------------------------------------------------------------#
 [[reg]]
 name = "EICRA"
 desc = "External Interrupt Control Register A"
 addr = "0x69"
 fields = [
-    {name="ISC3", desc="External Interrupt 3 Sense Control Bits", rnge="7:6"},
-    {name="ISC2", desc="External Interrupt 2 Sense Control Bits", rnge="5:4"},
-    {name="ISC1", desc="External Interrupt 1 Sense Control Bits", rnge="3:2"},
-    {name="ISC0", desc="External Interrupt 0 Sense Control Bits", rnge="1:0"},
+    {name="ISC3", desc="External Interrupt 3 Sense Control Bits", rnge="7:6", valu="sense_control"},
+    {name="ISC2", desc="External Interrupt 2 Sense Control Bits", rnge="5:4", valu="sense_control"},
+    {name="ISC1", desc="External Interrupt 1 Sense Control Bits", rnge="3:2", valu="sense_control"},
+    {name="ISC0", desc="External Interrupt 0 Sense Control Bits", rnge="1:0", valu="sense_control"},
 ]
 
 #---------------------------------------------------------------------#
@@ -45,7 +53,7 @@ name = "EICRB"
 desc = "External Interrupt Control Register B"
 addr = "0x6A"
 fields = [
-    {name="ISC6", desc="External Interrupt 6 Sense Control Bits", rnge="5:4"},
+    {name="ISC6", desc="External Interrupt 6 Sense Control Bits", rnge="5:4", valu="sense_control"},
 ]
 
 #---------------------------------------------------------------------#

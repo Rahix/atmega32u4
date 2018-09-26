@@ -76,17 +76,30 @@ def peripheral(filename):
           <fields>""")
 
                 for field in reg["fields"]:
-                    custom = (
-                        ""
-                        if not "cstm" in field
-                        else textwrap.indent(field["cstm"].strip(), "              ") + "\n"
-                    )
                     print(f"""\
             <field>
               <name>{field["name"]}</name>
               <description>{field["desc"]}</description>
-              <bitRange>[{field["rnge"]}]</bitRange>
-{custom}            </field>""")
+              <bitRange>[{field["rnge"]}]</bitRange>""")
+
+                    if "cstm" in field:
+                        print(textwrap.indent(field["cstm"].strip(), "              "))
+
+                    if "valu" in field:
+                        print("""
+              <enumeratedValues>""")
+                        for value in data["val"][field["valu"]]["values"]:
+                            print(f"""\
+                <enumeratedValue>
+                  <name>{value["name"]}</name>
+                  <description>{value["desc"]}</description>
+                  <value>{value["valu"]}</value>
+                </enumeratedValue>""")
+                        print("""\
+              </enumeratedValues>""")
+
+                    print(f"""\
+            </field>""")
 
                 print("""\
           </fields>""")
