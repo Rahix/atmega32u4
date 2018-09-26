@@ -17,4 +17,8 @@ sed -i '1d; 2d' src/peripherals/mod.rs
 sed -i 's/\(static mut DEVICE_PERIPHERALS\)/pub(crate) \0/' src/peripherals/mod.rs
 sed -i 's/\(interrupt::Interrupt\)/self::\0/' src/peripherals/mod.rs
 
+# Generate interrupt macro
+./int_macro.sh >src/peripherals/interrupt/vector_macro.rs
+sed -i '1ipub mod vector_macro;' src/peripherals/interrupt/mod.rs
+
 rustup run nightly cargo doc

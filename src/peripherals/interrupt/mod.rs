@@ -1,3 +1,4 @@
+pub mod vector_macro;
 use core::convert::TryFrom;
 #[doc = r" Enumeration of all the interrupts"]
 pub enum Interrupt {

@@ -12,6 +12,8 @@ pub mod interrupt;
 mod peripherals;
 pub use peripherals::*;
 
+mod interrupt_macro;
+
 impl Peripherals {
     #[doc = r" Returns all the peripherals *once*"]
     #[inline]
