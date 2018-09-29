@@ -1,6 +1,12 @@
 # Changelog
 
 ## [Unreleased]
+### Changed
+- Made a few registers safe to write
+
+### Added
+- Enumerated values for `Compare Output Mode`
+- *Internal*: Add `safe` flag for registers and fields
 
 ## [0.1.2] - 2018-09-26
 ### Added
