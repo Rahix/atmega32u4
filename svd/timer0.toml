@@ -17,6 +17,22 @@ name = "TIMER0_OVF"
 desc = "Timer/Counter0 Overflow"
 vect = 23
 
+[val.com]
+values = [
+    {valu=0, name="DISCONNECTED", desc="Normal port operation, OC0x disconnected"},
+    {valu=1, name="MATCH_TOGGLE", desc="Toggle OC0x on Compare Match (Might depend on WGM)"},
+    {valu=2, name="MATCH_CLEAR", desc="Clear OC0x on Compare Match (If PWM is enabled, OC0x is set at TOP)"},
+    {valu=3, name="MATCH_SET", desc="Set OC0x on Compare Match (If PWM is enabled, OC0x is cleared at TOP)"},
+]
+
+[val.wgm]
+values = [
+    {valu=0, name="NORMAL_TOP", desc="Normal, Top: `0xff`, Update: *Immediate*, Flag: *MAX*"},
+    {valu=1, name="PWM_PHASE", desc="Phase Correct PWM, Top: `0xff`, Update: *TOP*, Flag: *BOTTOM*"},
+    {valu=2, name="CTC", desc="CTC, Top: *OCRA*, Update: *Immediate*, Flag: *MAX*"},
+    {valu=3, name="PWM_FAST", desc="Fast PWM, Top: `0xff`, Update: *TOP*, Flag: *MAX*"},
+]
+
 #---------------------------------------------------------------------#
 [[reg]]
 name = "TIFR"
@@ -34,9 +50,9 @@ name = "TCCR_A"
 desc = "Timer/Counter Control Register A"
 addr = "0x44"
 fields = [
-    {name="COM_A", desc="Compare Match Output A Mode",       rnge="7:6"},
-    {name="COM_B", desc="Compare Match Output B Mode",       rnge="5:4"},
-    {name="WGM0",  desc="Waveform Generation Mode Bits 1:0", rnge="1:0"},
+    {name="COM_A", desc="Compare Match Output A Mode",       rnge="7:6", valu="com"},
+    {name="COM_B", desc="Compare Match Output B Mode",       rnge="5:4", valu="com"},
+    {name="WGM0",  desc="Waveform Generation Mode Bits 1:0", rnge="1:0", valu="wgm"},
 ]
 
 #---------------------------------------------------------------------#
@@ -63,7 +79,7 @@ cstm = """\
 
 [[reg.fields]]
 name = "WGM2"
-desc = "Waveform Generation Mode Bit 2"
+desc = "Waveform Generation Mode Bit 2 (Enable Top: *OCRA* for PWM modes)"
 rnge = "3:3"
 
 [[reg.fields]]

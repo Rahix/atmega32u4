@@ -27,6 +27,14 @@ name = "TIMER4_FPF"
 desc = "Timer/Counter4 Fault Protection Interrupt"
 vect = 42
 
+[val.com]
+values = [
+    {valu=0, name="DISCONNECTED", desc="Normal port operation, OC4x disconnected"},
+    {valu=1, name="MATCH_TOGGLE", desc="Toggle OC4x on Compare Match (Might depend on WGM)"},
+    {valu=2, name="MATCH_CLEAR", desc="Clear OC4x on Compare Match (If PWM is enabled, OC4x is set at TOP)"},
+    {valu=3, name="MATCH_SET", desc="Set OC4x on Compare Match (If PWM is enabled, OC4x is cleared at TOP)"},
+]
+
 #---------------------------------------------------------------------#
 [[reg]]
 name = "TIFR"
@@ -45,8 +53,8 @@ name = "TCCR_A"
 desc = "Timer/Counter Control Register A"
 addr = "0xC0"
 fields = [
-    {name="COM_A", desc="Compare Output Mode for Channel A", rnge="7:6"},
-    {name="COM_B", desc="Compare Output Mode for Channel B", rnge="5:4"},
+    {name="COM_A", desc="Compare Output Mode for Channel A", rnge="7:6", valu="com"},
+    {name="COM_B", desc="Compare Output Mode for Channel B", rnge="5:4", valu="com"},
     {name="PWM_A", desc="Pulse Width Modulator A",           rnge="1:1"},
     {name="PWM_B", desc="Pulse Width Modulator B",           rnge="0:0"},
 ]
@@ -92,9 +100,9 @@ name = "TCCR_C"
 desc = "Timer/Counter Control Register C"
 addr = "0xC2"
 fields = [
-    {name="COM_A", desc="Compare Output Mode for Channel A", rnge="7:6"},
-    {name="COM_B", desc="Compare Output Mode for Channel B", rnge="5:4"},
-    {name="COM_D", desc="Compare Output Mode for Channel D", rnge="3:2"},
+    {name="COM_A", desc="Compare Output Mode for Channel A", rnge="7:6", valu="com"},
+    {name="COM_B", desc="Compare Output Mode for Channel B", rnge="5:4", valu="com"},
+    {name="COM_D", desc="Compare Output Mode for Channel D", rnge="3:2", valu="com"},
     {name="PWM_D", desc="Pulse Width Modulator D",           rnge="0:0"},
 ]
 

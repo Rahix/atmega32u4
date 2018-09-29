@@ -27,6 +27,14 @@ name = "TIMER3_OVF"
 desc = "Timer/Counter3 Overflow"
 vect = 35
 
+[val.com]
+values = [
+    {valu=0, name="DISCONNECTED", desc="Normal port operation, OC3x disconnected"},
+    {valu=1, name="MATCH_TOGGLE", desc="Toggle OC3x on Compare Match (Might depend on WGM)"},
+    {valu=2, name="MATCH_CLEAR", desc="Clear OC3x on Compare Match (If PWM is enabled, OC3x is set at TOP)"},
+    {valu=3, name="MATCH_SET", desc="Set OC3x on Compare Match (If PWM is enabled, OC3x is cleared at TOP)"},
+]
+
 #---------------------------------------------------------------------#
 [[reg]]
 name = "TIFR"
@@ -46,9 +54,9 @@ name = "TCCR_A"
 desc = "Timer/Counter Control Register A"
 addr = "0x90"
 fields = [
-    {name="COM_A", desc="Compare Output Mode for Channel A", rnge="7:6"},
-    {name="COM_B", desc="Compare Output Mode for Channel B", rnge="5:4"},
-    {name="COM_C", desc="Compare Output Mode for Channel C", rnge="3:2"},
+    {name="COM_A", desc="Compare Output Mode for Channel A", rnge="7:6", valu="com"},
+    {name="COM_B", desc="Compare Output Mode for Channel B", rnge="5:4", valu="com"},
+    {name="COM_C", desc="Compare Output Mode for Channel C", rnge="3:2", valu="com"},
     {name="WGM0",  desc="Waveform Generation Mode 1:0",      rnge="1:0"},
 ]
 

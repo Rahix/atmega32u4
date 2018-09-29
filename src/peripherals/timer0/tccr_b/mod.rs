@@ -162,7 +162,7 @@ impl R {
     pub fn bits(&self) -> u8 {
         self.bits
     }
-    #[doc = "Bit 3 - Waveform Generation Mode Bit 2"]
+    #[doc = "Bit 3 - Waveform Generation Mode Bit 2 (Enable Top: *OCRA* for PWM modes)"]
     #[inline]
     pub fn wgm2(&self) -> WGM2R {
         let bits = {
@@ -205,7 +205,7 @@ impl W {
     pub fn foc_b(&mut self) -> _FOC_BW {
         _FOC_BW { w: self }
     }
-    #[doc = "Bit 3 - Waveform Generation Mode Bit 2"]
+    #[doc = "Bit 3 - Waveform Generation Mode Bit 2 (Enable Top: *OCRA* for PWM modes)"]
     #[inline]
     pub fn wgm2(&mut self) -> _WGM2W {
         _WGM2W { w: self }

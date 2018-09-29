@@ -40,26 +40,116 @@ impl super::TCCR_A {
         self.write(|w| w)
     }
 }
-#[doc = r" Value of the field"]
-pub struct COM_AR {
-    bits: u8,
+#[doc = "Possible values of the field `COM_A`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum COM_AR {
+    #[doc = "Normal port operation, OC4x disconnected"]
+    DISCONNECTED,
+    #[doc = "Toggle OC4x on Compare Match (Might depend on WGM)"]
+    MATCH_TOGGLE,
+    #[doc = "Clear OC4x on Compare Match (If PWM is enabled, OC4x is set at TOP)"]
+    MATCH_CLEAR,
+    #[doc = "Set OC4x on Compare Match (If PWM is enabled, OC4x is cleared at TOP)"]
+    MATCH_SET,
 }
 impl COM_AR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
-        self.bits
+        match *self {
+            COM_AR::DISCONNECTED => 0,
+            COM_AR::MATCH_TOGGLE => 1,
+            COM_AR::MATCH_CLEAR => 2,
+            COM_AR::MATCH_SET => 3,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: u8) -> COM_AR {
+        match value {
+            0 => COM_AR::DISCONNECTED,
+            1 => COM_AR::MATCH_TOGGLE,
+            2 => COM_AR::MATCH_CLEAR,
+            3 => COM_AR::MATCH_SET,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISCONNECTED`"]
+    #[inline]
+    pub fn is_disconnected(&self) -> bool {
+        *self == COM_AR::DISCONNECTED
+    }
+    #[doc = "Checks if the value of the field is `MATCH_TOGGLE`"]
+    #[inline]
+    pub fn is_match_toggle(&self) -> bool {
+        *self == COM_AR::MATCH_TOGGLE
+    }
+    #[doc = "Checks if the value of the field is `MATCH_CLEAR`"]
+    #[inline]
+    pub fn is_match_clear(&self) -> bool {
+        *self == COM_AR::MATCH_CLEAR
+    }
+    #[doc = "Checks if the value of the field is `MATCH_SET`"]
+    #[inline]
+    pub fn is_match_set(&self) -> bool {
+        *self == COM_AR::MATCH_SET
     }
 }
-#[doc = r" Value of the field"]
-pub struct COM_BR {
-    bits: u8,
+#[doc = "Possible values of the field `COM_B`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum COM_BR {
+    #[doc = "Normal port operation, OC4x disconnected"]
+    DISCONNECTED,
+    #[doc = "Toggle OC4x on Compare Match (Might depend on WGM)"]
+    MATCH_TOGGLE,
+    #[doc = "Clear OC4x on Compare Match (If PWM is enabled, OC4x is set at TOP)"]
+    MATCH_CLEAR,
+    #[doc = "Set OC4x on Compare Match (If PWM is enabled, OC4x is cleared at TOP)"]
+    MATCH_SET,
 }
 impl COM_BR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
-        self.bits
+        match *self {
+            COM_BR::DISCONNECTED => 0,
+            COM_BR::MATCH_TOGGLE => 1,
+            COM_BR::MATCH_CLEAR => 2,
+            COM_BR::MATCH_SET => 3,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: u8) -> COM_BR {
+        match value {
+            0 => COM_BR::DISCONNECTED,
+            1 => COM_BR::MATCH_TOGGLE,
+            2 => COM_BR::MATCH_CLEAR,
+            3 => COM_BR::MATCH_SET,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISCONNECTED`"]
+    #[inline]
+    pub fn is_disconnected(&self) -> bool {
+        *self == COM_BR::DISCONNECTED
+    }
+    #[doc = "Checks if the value of the field is `MATCH_TOGGLE`"]
+    #[inline]
+    pub fn is_match_toggle(&self) -> bool {
+        *self == COM_BR::MATCH_TOGGLE
+    }
+    #[doc = "Checks if the value of the field is `MATCH_CLEAR`"]
+    #[inline]
+    pub fn is_match_clear(&self) -> bool {
+        *self == COM_BR::MATCH_CLEAR
+    }
+    #[doc = "Checks if the value of the field is `MATCH_SET`"]
+    #[inline]
+    pub fn is_match_set(&self) -> bool {
+        *self == COM_BR::MATCH_SET
     }
 }
 #[doc = r" Value of the field"]
@@ -104,14 +194,65 @@ impl PWM_BR {
         self.bit()
     }
 }
+#[doc = "Values that can be written to the field `COM_A`"]
+pub enum COM_AW {
+    #[doc = "Normal port operation, OC4x disconnected"]
+    DISCONNECTED,
+    #[doc = "Toggle OC4x on Compare Match (Might depend on WGM)"]
+    MATCH_TOGGLE,
+    #[doc = "Clear OC4x on Compare Match (If PWM is enabled, OC4x is set at TOP)"]
+    MATCH_CLEAR,
+    #[doc = "Set OC4x on Compare Match (If PWM is enabled, OC4x is cleared at TOP)"]
+    MATCH_SET,
+}
+impl COM_AW {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> u8 {
+        match *self {
+            COM_AW::DISCONNECTED => 0,
+            COM_AW::MATCH_TOGGLE => 1,
+            COM_AW::MATCH_CLEAR => 2,
+            COM_AW::MATCH_SET => 3,
+        }
+    }
+}
 #[doc = r" Proxy"]
 pub struct _COM_AW<'a> {
     w: &'a mut W,
 }
 impl<'a> _COM_AW<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: COM_AW) -> &'a mut W {
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "Normal port operation, OC4x disconnected"]
+    #[inline]
+    pub fn disconnected(self) -> &'a mut W {
+        self.variant(COM_AW::DISCONNECTED)
+    }
+    #[doc = "Toggle OC4x on Compare Match (Might depend on WGM)"]
+    #[inline]
+    pub fn match_toggle(self) -> &'a mut W {
+        self.variant(COM_AW::MATCH_TOGGLE)
+    }
+    #[doc = "Clear OC4x on Compare Match (If PWM is enabled, OC4x is set at TOP)"]
+    #[inline]
+    pub fn match_clear(self) -> &'a mut W {
+        self.variant(COM_AW::MATCH_CLEAR)
+    }
+    #[doc = "Set OC4x on Compare Match (If PWM is enabled, OC4x is cleared at TOP)"]
+    #[inline]
+    pub fn match_set(self) -> &'a mut W {
+        self.variant(COM_AW::MATCH_SET)
+    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+    pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 6;
         self.w.bits &= !((MASK as u8) << OFFSET);
@@ -119,14 +260,65 @@ impl<'a> _COM_AW<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `COM_B`"]
+pub enum COM_BW {
+    #[doc = "Normal port operation, OC4x disconnected"]
+    DISCONNECTED,
+    #[doc = "Toggle OC4x on Compare Match (Might depend on WGM)"]
+    MATCH_TOGGLE,
+    #[doc = "Clear OC4x on Compare Match (If PWM is enabled, OC4x is set at TOP)"]
+    MATCH_CLEAR,
+    #[doc = "Set OC4x on Compare Match (If PWM is enabled, OC4x is cleared at TOP)"]
+    MATCH_SET,
+}
+impl COM_BW {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> u8 {
+        match *self {
+            COM_BW::DISCONNECTED => 0,
+            COM_BW::MATCH_TOGGLE => 1,
+            COM_BW::MATCH_CLEAR => 2,
+            COM_BW::MATCH_SET => 3,
+        }
+    }
+}
 #[doc = r" Proxy"]
 pub struct _COM_BW<'a> {
     w: &'a mut W,
 }
 impl<'a> _COM_BW<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: COM_BW) -> &'a mut W {
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "Normal port operation, OC4x disconnected"]
+    #[inline]
+    pub fn disconnected(self) -> &'a mut W {
+        self.variant(COM_BW::DISCONNECTED)
+    }
+    #[doc = "Toggle OC4x on Compare Match (Might depend on WGM)"]
+    #[inline]
+    pub fn match_toggle(self) -> &'a mut W {
+        self.variant(COM_BW::MATCH_TOGGLE)
+    }
+    #[doc = "Clear OC4x on Compare Match (If PWM is enabled, OC4x is set at TOP)"]
+    #[inline]
+    pub fn match_clear(self) -> &'a mut W {
+        self.variant(COM_BW::MATCH_CLEAR)
+    }
+    #[doc = "Set OC4x on Compare Match (If PWM is enabled, OC4x is cleared at TOP)"]
+    #[inline]
+    pub fn match_set(self) -> &'a mut W {
+        self.variant(COM_BW::MATCH_SET)
+    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+    pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 4;
         self.w.bits &= !((MASK as u8) << OFFSET);
@@ -235,22 +427,20 @@ impl R {
     #[doc = "Bits 6:7 - Compare Output Mode for Channel A"]
     #[inline]
     pub fn com_a(&self) -> COM_AR {
-        let bits = {
+        COM_AR::_from({
             const MASK: u8 = 3;
             const OFFSET: u8 = 6;
             ((self.bits >> OFFSET) & MASK as u8) as u8
-        };
-        COM_AR { bits }
+        })
     }
     #[doc = "Bits 4:5 - Compare Output Mode for Channel B"]
     #[inline]
     pub fn com_b(&self) -> COM_BR {
-        let bits = {
+        COM_BR::_from({
             const MASK: u8 = 3;
             const OFFSET: u8 = 4;
             ((self.bits >> OFFSET) & MASK as u8) as u8
-        };
-        COM_BR { bits }
+        })
     }
     #[doc = "Bit 1 - Pulse Width Modulator A"]
     #[inline]
