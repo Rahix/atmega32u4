@@ -92,18 +92,21 @@ rnge = "2:0"
 name = "TCNT"
 desc = "Timer/Counter Register"
 addr = "0x46"
+safe = true
 
 #---------------------------------------------------------------------#
 [[reg]]
 name = "OCR_A"
 desc = "Timer Output Compare Register A"
 addr = "0x47"
+safe = true
 
 #---------------------------------------------------------------------#
 [[reg]]
 name = "OCR_B"
 desc = "Timer Output Compare Register B"
 addr = "0x48"
+safe = true
 
 #---------------------------------------------------------------------#
 [[reg]]

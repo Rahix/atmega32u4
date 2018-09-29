@@ -88,60 +88,70 @@ fields = [
 name = "TCNT_H"
 desc = "Timer/Counter Register High Byte"
 addr = "0x95"
+safe = true
 
 #---------------------------------------------------------------------#
 [[reg]]
 name = "TCNT_L"
 desc = "Timer/Counter Register Low Byte"
 addr = "0x94"
+safe = true
 
 #---------------------------------------------------------------------#
 [[reg]]
 name = "OCR_A_H"
 desc = "Output Compare Register A High Byte"
 addr = "0x99"
+safe = true
 
 #---------------------------------------------------------------------#
 [[reg]]
 name = "OCR_A_L"
 desc = "Output Compare Register A Low Byte"
 addr = "0x98"
+safe = true
 
 #---------------------------------------------------------------------#
 [[reg]]
 name = "OCR_B_H"
 desc = "Output Compare Register B High Byte"
 addr = "0x9B"
+safe = true
 
 #---------------------------------------------------------------------#
 [[reg]]
 name = "OCR_B_L"
 desc = "Output Compare Register B Low Byte"
 addr = "0x9A"
+safe = true
 
 #---------------------------------------------------------------------#
 [[reg]]
 name = "OCR_C_H"
 desc = "Output Compare Register C High Byte"
 addr = "0x9D"
+safe = true
 
 #---------------------------------------------------------------------#
 [[reg]]
 name = "OCR_C_L"
 desc = "Output Compare Register C Low Byte"
 addr = "0x9C"
+safe = true
 
 #---------------------------------------------------------------------#
 [[reg]]
 name = "ICR_H"
 desc = "Input Capture Register High Byte"
 addr = "0x87"
+safe = true
 
 #---------------------------------------------------------------------#
 [[reg]]
 name = "ICR_L"
 desc = "Input Capture Register Low Byte"
 addr = "0x86"
+safe = true
 
 #---------------------------------------------------------------------#
 [[reg]]

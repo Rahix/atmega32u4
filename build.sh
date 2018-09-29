@@ -5,7 +5,7 @@ set -xe
 svd2rust --target none -i _.svd >mod.rs
 rm _.svd
 rm -r src/peripherals
-form -i mod.rs -o src/peripherals
+form -i mod.rs -o src/peripherals 2>/dev/null
 rm mod.rs
 mv src/peripherals/lib.rs src/peripherals/mod.rs
 cargo fmt || true

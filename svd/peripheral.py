@@ -1,5 +1,6 @@
-import toml
+import sys
 import textwrap
+import toml
 
 def group_blocks(registers):
     blocks = []
@@ -71,6 +72,19 @@ def peripheral(filename):
             if "cstm" in reg:
                 print(textwrap.indent(reg["cstm"].strip(), "          "))
 
+            if "safe" in reg and "fields" in reg:
+                print(f'Warning: {info["name"]}[{reg["name"]}] has both "safe" and "fields[]"!', file=sys.stderr)
+
+            if "safe" in reg:
+                # The whole register is safe to write
+                print("""\
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>""")
+
             if "fields" in reg:
                 print("""
           <fields>""")
@@ -84,6 +98,25 @@ def peripheral(filename):
 
                     if "cstm" in field:
                         print(textwrap.indent(field["cstm"].strip(), "              "))
+
+                    # Write constraint
+                    if "safe" in field:
+                        rnge = [int(x) for x in field["rnge"].split(":")]
+                        bits = rnge[0] - rnge[1] + 1
+                        maxi = 2**bits-1
+                        print(f"""\
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>{maxi}</maximum>
+                </range>
+              </writeConstraint>""")
+                    elif "valu" in field:
+                        print("""\
+              <writeConstraint>
+                <useEnumeratedValues>true</useEnumeratedValues>
+              </writeConstraint>
+                        """)
 
                     if "valu" in field:
                         print("""

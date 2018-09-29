@@ -150,6 +150,7 @@ fields = [
 name = "TCNT"
 desc = "Timer/Counter Register"
 addr = "0xBE"
+safe = true
 
 #---------------------------------------------------------------------#
 [[reg]]
@@ -158,7 +159,7 @@ desc = "Timer/Counter High Byte"
 addr = "0xBF"
 fields = [
     {name="TC10",  desc="Additional MSB Bit for 11-Bit Access", rnge="2:2", cstm="<access>read-only</access>\n"},
-    {name="TC98",  desc="Two MSB bits of the 10-bit accesses", rnge="1:0"},
+    {name="TC98",  desc="Two MSB bits of the 10-bit accesses", rnge="1:0", safe=true},
 ]
 
 #---------------------------------------------------------------------#
@@ -166,24 +167,28 @@ fields = [
 name = "OCR_A"
 desc = "Output Compare Register A"
 addr = "0xCF"
+safe = true
 
 #---------------------------------------------------------------------#
 [[reg]]
 name = "OCR_B"
 desc = "Output Compare Register B"
 addr = "0xD0"
+safe = true
 
 #---------------------------------------------------------------------#
 [[reg]]
 name = "OCR_C"
 desc = "Output Compare Register B"
 addr = "0xD1"
+safe = true
 
 #---------------------------------------------------------------------#
 [[reg]]
 name = "OCR_D"
 desc = "Output Compare Register B"
 addr = "0xD2"
+safe = true
 
 #---------------------------------------------------------------------#
 [[reg]]
