@@ -35,6 +35,18 @@ values = [
     {valu=3, name="MATCH_SET", desc="Set OC3x on Compare Match (If PWM is enabled, OC3x is cleared at TOP)"},
 ]
 
+[val.cs]
+values = [
+    {valu=0, name="STOPPED", desc="No clock source (Timer/Counter stopped)"},
+    {valu=1, name="IO", desc="clkIO/1 (No prescaling)"},
+    {valu=2, name="IO_8", desc="clkIO/8 (From prescaler)"},
+    {valu=3, name="IO_64", desc="clkIO/64 (From prescaler)"},
+    {valu=4, name="IO_256", desc="clkIO/256 (From prescaler)"},
+    {valu=5, name="IO_1024", desc="clkIO/1024 (From prescaler)"},
+    {valu=6, name="EXT_FALLING", desc="External clock source on T0 pin. Clock on falling edge."},
+    {valu=7, name="EXT_RISING", desc="External clock source on T0 pin. Clock on rising edge."},
+]
+
 #---------------------------------------------------------------------#
 [[reg]]
 name = "TIFR"
@@ -69,7 +81,7 @@ fields = [
     {name="ICNC", desc="Input Capture Noise Canceler", rnge="7:7"},
     {name="ICES", desc="Input Capture Edge Set",       rnge="6:6"},
     {name="WGM2", desc="Waveform Generation Mode 3:2", rnge="4:3"},
-    {name="CS",   desc="Clock Select",                 rnge="2:0"},
+    {name="CS",   desc="Clock Select",                 rnge="2:0", valu="cs"},
 ]
 
 #---------------------------------------------------------------------#

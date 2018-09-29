@@ -35,6 +35,26 @@ values = [
     {valu=3, name="MATCH_SET", desc="Set OC4x on Compare Match (If PWM is enabled, OC4x is cleared at TOP)"},
 ]
 
+[val.cs]
+values = [
+    {valu=0,  name="STOPPED", desc="No clock source (Timer/Counter stopped)"},
+    {valu=1,  name="CLK", desc="clk/1 (No Prescaler)"},
+    {valu=2,  name="CLK_2", desc="clk/2"},
+    {valu=3,  name="CLK_4", desc="clk/4"},
+    {valu=4,  name="CLK_8", desc="clk/8"},
+    {valu=5,  name="CLK_16", desc="clk/16"},
+    {valu=6,  name="CLK_32", desc="clk/32"},
+    {valu=7,  name="CLK_64", desc="clk/64"},
+    {valu=8,  name="CLK_128", desc="clk/128"},
+    {valu=9,  name="CLK_256", desc="clk/256"},
+    {valu=10,  name="CLK_512", desc="clk/512"},
+    {valu=11,  name="CLK_1024", desc="clk/1024"},
+    {valu=12,  name="CLK_2048", desc="clk/2048"},
+    {valu=13,  name="CLK_4096", desc="clk/4096"},
+    {valu=14,  name="CLK_8192", desc="clk/8192"},
+    {valu=15, name="CLK_16384", desc="clk/16384"},
+]
+
 #---------------------------------------------------------------------#
 [[reg]]
 name = "TIFR"
@@ -83,7 +103,7 @@ addr = "0xC1"
 fields = [
     {name="PWM_X", desc="PWM Inversion Mode",  rnge="7:7"},
     {name="DTPS",  desc="Dead Time Prescaler", rnge="5:4"},
-    {name="CS",    desc="Clock Source",        rnge="3:0"},
+    {name="CS",    desc="Clock Source",        rnge="3:0", valu="cs"},
 ]
 
 [[reg.fields]]

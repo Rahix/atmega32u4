@@ -61,15 +61,96 @@ impl WGM2R {
         self.bit()
     }
 }
-#[doc = r" Value of the field"]
-pub struct CSR {
-    bits: u8,
+#[doc = "Possible values of the field `CS`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CSR {
+    #[doc = "No clock source (Timer/Counter stopped)"]
+    STOPPED,
+    #[doc = "clkIO /1 (No prescaling)"]
+    IO,
+    #[doc = "clkIO/8 (From prescaler)"]
+    IO_8,
+    #[doc = "clkIO/64 (From prescaler)"]
+    IO_64,
+    #[doc = "clkIO/256 (From prescaler)"]
+    IO_256,
+    #[doc = "clkIO/1024 (From prescaler)"]
+    IO_1024,
+    #[doc = "External clock source on T0 pin. Clock on falling edge."]
+    EXT_FALLING,
+    #[doc = "External clock source on T0 pin. Clock on rising edge."]
+    EXT_RISING,
 }
 impl CSR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
-        self.bits
+        match *self {
+            CSR::STOPPED => 0,
+            CSR::IO => 1,
+            CSR::IO_8 => 2,
+            CSR::IO_64 => 3,
+            CSR::IO_256 => 4,
+            CSR::IO_1024 => 5,
+            CSR::EXT_FALLING => 6,
+            CSR::EXT_RISING => 7,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: u8) -> CSR {
+        match value {
+            0 => CSR::STOPPED,
+            1 => CSR::IO,
+            2 => CSR::IO_8,
+            3 => CSR::IO_64,
+            4 => CSR::IO_256,
+            5 => CSR::IO_1024,
+            6 => CSR::EXT_FALLING,
+            7 => CSR::EXT_RISING,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `STOPPED`"]
+    #[inline]
+    pub fn is_stopped(&self) -> bool {
+        *self == CSR::STOPPED
+    }
+    #[doc = "Checks if the value of the field is `IO`"]
+    #[inline]
+    pub fn is_io(&self) -> bool {
+        *self == CSR::IO
+    }
+    #[doc = "Checks if the value of the field is `IO_8`"]
+    #[inline]
+    pub fn is_io_8(&self) -> bool {
+        *self == CSR::IO_8
+    }
+    #[doc = "Checks if the value of the field is `IO_64`"]
+    #[inline]
+    pub fn is_io_64(&self) -> bool {
+        *self == CSR::IO_64
+    }
+    #[doc = "Checks if the value of the field is `IO_256`"]
+    #[inline]
+    pub fn is_io_256(&self) -> bool {
+        *self == CSR::IO_256
+    }
+    #[doc = "Checks if the value of the field is `IO_1024`"]
+    #[inline]
+    pub fn is_io_1024(&self) -> bool {
+        *self == CSR::IO_1024
+    }
+    #[doc = "Checks if the value of the field is `EXT_FALLING`"]
+    #[inline]
+    pub fn is_ext_falling(&self) -> bool {
+        *self == CSR::EXT_FALLING
+    }
+    #[doc = "Checks if the value of the field is `EXT_RISING`"]
+    #[inline]
+    pub fn is_ext_rising(&self) -> bool {
+        *self == CSR::EXT_RISING
     }
 }
 #[doc = r" Proxy"]
@@ -141,14 +222,97 @@ impl<'a> _WGM2W<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `CS`"]
+pub enum CSW {
+    #[doc = "No clock source (Timer/Counter stopped)"]
+    STOPPED,
+    #[doc = "clkIO /1 (No prescaling)"]
+    IO,
+    #[doc = "clkIO/8 (From prescaler)"]
+    IO_8,
+    #[doc = "clkIO/64 (From prescaler)"]
+    IO_64,
+    #[doc = "clkIO/256 (From prescaler)"]
+    IO_256,
+    #[doc = "clkIO/1024 (From prescaler)"]
+    IO_1024,
+    #[doc = "External clock source on T0 pin. Clock on falling edge."]
+    EXT_FALLING,
+    #[doc = "External clock source on T0 pin. Clock on rising edge."]
+    EXT_RISING,
+}
+impl CSW {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> u8 {
+        match *self {
+            CSW::STOPPED => 0,
+            CSW::IO => 1,
+            CSW::IO_8 => 2,
+            CSW::IO_64 => 3,
+            CSW::IO_256 => 4,
+            CSW::IO_1024 => 5,
+            CSW::EXT_FALLING => 6,
+            CSW::EXT_RISING => 7,
+        }
+    }
+}
 #[doc = r" Proxy"]
 pub struct _CSW<'a> {
     w: &'a mut W,
 }
 impl<'a> _CSW<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: CSW) -> &'a mut W {
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "No clock source (Timer/Counter stopped)"]
+    #[inline]
+    pub fn stopped(self) -> &'a mut W {
+        self.variant(CSW::STOPPED)
+    }
+    #[doc = "clkIO /1 (No prescaling)"]
+    #[inline]
+    pub fn io(self) -> &'a mut W {
+        self.variant(CSW::IO)
+    }
+    #[doc = "clkIO/8 (From prescaler)"]
+    #[inline]
+    pub fn io_8(self) -> &'a mut W {
+        self.variant(CSW::IO_8)
+    }
+    #[doc = "clkIO/64 (From prescaler)"]
+    #[inline]
+    pub fn io_64(self) -> &'a mut W {
+        self.variant(CSW::IO_64)
+    }
+    #[doc = "clkIO/256 (From prescaler)"]
+    #[inline]
+    pub fn io_256(self) -> &'a mut W {
+        self.variant(CSW::IO_256)
+    }
+    #[doc = "clkIO/1024 (From prescaler)"]
+    #[inline]
+    pub fn io_1024(self) -> &'a mut W {
+        self.variant(CSW::IO_1024)
+    }
+    #[doc = "External clock source on T0 pin. Clock on falling edge."]
+    #[inline]
+    pub fn ext_falling(self) -> &'a mut W {
+        self.variant(CSW::EXT_FALLING)
+    }
+    #[doc = "External clock source on T0 pin. Clock on rising edge."]
+    #[inline]
+    pub fn ext_rising(self) -> &'a mut W {
+        self.variant(CSW::EXT_RISING)
+    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+    pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 7;
         const OFFSET: u8 = 0;
         self.w.bits &= !((MASK as u8) << OFFSET);
@@ -175,12 +339,11 @@ impl R {
     #[doc = "Bits 0:2 - Clock Select"]
     #[inline]
     pub fn cs(&self) -> CSR {
-        let bits = {
+        CSR::_from({
             const MASK: u8 = 7;
             const OFFSET: u8 = 0;
             ((self.bits >> OFFSET) & MASK as u8) as u8
-        };
-        CSR { bits }
+        })
     }
 }
 impl W {

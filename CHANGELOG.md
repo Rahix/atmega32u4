@@ -5,7 +5,7 @@
 - Made a few registers safe to write
 
 ### Added
-- Enumerated values for `Compare Output Mode`
+- Enumerated values for `Compare Output Mode` & `Clock Source`
 - *Internal*: Add `safe` flag for registers and fields
 
 ## [0.1.2] - 2018-09-26
