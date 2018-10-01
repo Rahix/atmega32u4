@@ -36,7 +36,7 @@ values = [
 [val.cs]
 values = [
     {valu=0, name="STOPPED", desc="No clock source (Timer/Counter stopped)"},
-    {valu=1, name="IO", desc="clkIO /1 (No prescaling)"},
+    {valu=1, name="IO", desc="clkIO/1 (No prescaling)"},
     {valu=2, name="IO_8", desc="clkIO/8 (From prescaler)"},
     {valu=3, name="IO_64", desc="clkIO/64 (From prescaler)"},
     {valu=4, name="IO_256", desc="clkIO/256 (From prescaler)"},

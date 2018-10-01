@@ -66,7 +66,7 @@ impl WGM2R {
 pub enum CSR {
     #[doc = "No clock source (Timer/Counter stopped)"]
     STOPPED,
-    #[doc = "clkIO /1 (No prescaling)"]
+    #[doc = "clkIO/1 (No prescaling)"]
     IO,
     #[doc = "clkIO/8 (From prescaler)"]
     IO_8,
@@ -226,7 +226,7 @@ impl<'a> _WGM2W<'a> {
 pub enum CSW {
     #[doc = "No clock source (Timer/Counter stopped)"]
     STOPPED,
-    #[doc = "clkIO /1 (No prescaling)"]
+    #[doc = "clkIO/1 (No prescaling)"]
     IO,
     #[doc = "clkIO/8 (From prescaler)"]
     IO_8,
@@ -275,7 +275,7 @@ impl<'a> _CSW<'a> {
     pub fn stopped(self) -> &'a mut W {
         self.variant(CSW::STOPPED)
     }
-    #[doc = "clkIO /1 (No prescaling)"]
+    #[doc = "clkIO/1 (No prescaling)"]
     #[inline]
     pub fn io(self) -> &'a mut W {
         self.variant(CSW::IO)

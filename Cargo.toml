@@ -1,6 +1,6 @@
 [package]
 name = "atmega32u4"
-version = "0.1.2"
+version = "0.1.3"
 authors = ["Rahix <rahix@rahix.de>"]
 description = "Low level access to ATmega32U4 registers"
 license = "MIT OR Apache-2.0"

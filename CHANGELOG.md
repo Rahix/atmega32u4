@@ -1,6 +1,9 @@
 # Changelog
 
 ## [Unreleased]
+
+
+## [0.1.3] = 2018-10-1
 ### Changed
 - Made a few registers safe to write
 
