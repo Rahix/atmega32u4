@@ -1,5 +1,4 @@
 pub mod vector_macro;
-use core::convert::TryFrom;
 #[doc = r" Enumeration of all the interrupts"]
 pub enum Interrupt {
     #[doc = "1 - External Interrupt 0"]
@@ -87,10 +86,9 @@ unsafe impl ::bare_metal::Nr for Interrupt {
 }
 #[derive(Debug, Copy, Clone)]
 pub struct TryFromInterruptError(());
-impl TryFrom<u8> for Interrupt {
-    type Error = TryFromInterruptError;
+impl Interrupt {
     #[inline]
-    fn try_from(value: u8) -> Result<Self, Self::Error> {
+    pub fn try_from(value: u8) -> Result<Self, TryFromInterruptError> {
         match value {
             1 => Ok(Interrupt::INT0),
             2 => Ok(Interrupt::INT1),

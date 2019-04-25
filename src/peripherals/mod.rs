@@ -1,5 +1,5 @@
-use core::ops::Deref;
 use core::marker::PhantomData;
+use core::ops::Deref;
 #[doc = r" Number available in the NVIC for configuring priority"]
 pub const NVIC_PRIO_BITS: u8 = 8;
 #[doc(hidden)]
@@ -214,6 +214,7 @@ impl Deref for USB {
 }
 #[doc = "USB Controller"]
 pub mod usb;
+#[allow(renamed_and_removed_lints)]
 #[allow(private_no_mangle_statics)]
 #[no_mangle]
 pub(crate) static mut DEVICE_PERIPHERALS: bool = false;
@@ -249,17 +250,39 @@ impl Peripherals {
         debug_assert!(!DEVICE_PERIPHERALS);
         DEVICE_PERIPHERALS = true;
         Peripherals {
-            PORTB: PORTB { _marker: PhantomData },
-            PORTC: PORTC { _marker: PhantomData },
-            PORTD: PORTD { _marker: PhantomData },
-            PORTE: PORTE { _marker: PhantomData },
-            PORTF: PORTF { _marker: PhantomData },
-            TIMER0: TIMER0 { _marker: PhantomData },
-            TIMER1: TIMER1 { _marker: PhantomData },
-            TIMER3: TIMER3 { _marker: PhantomData },
-            TIMER4: TIMER4 { _marker: PhantomData },
-            EXT_INT: EXT_INT { _marker: PhantomData },
-            USB: USB { _marker: PhantomData },
+            PORTB: PORTB {
+                _marker: PhantomData,
+            },
+            PORTC: PORTC {
+                _marker: PhantomData,
+            },
+            PORTD: PORTD {
+                _marker: PhantomData,
+            },
+            PORTE: PORTE {
+                _marker: PhantomData,
+            },
+            PORTF: PORTF {
+                _marker: PhantomData,
+            },
+            TIMER0: TIMER0 {
+                _marker: PhantomData,
+            },
+            TIMER1: TIMER1 {
+                _marker: PhantomData,
+            },
+            TIMER3: TIMER3 {
+                _marker: PhantomData,
+            },
+            TIMER4: TIMER4 {
+                _marker: PhantomData,
+            },
+            EXT_INT: EXT_INT {
+                _marker: PhantomData,
+            },
+            USB: USB {
+                _marker: PhantomData,
+            },
         }
     }
 }
