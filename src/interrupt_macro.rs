@@ -23,7 +23,7 @@
 #[macro_export]
 macro_rules! interrupt {
     ($Name:ident, $handler:path,state: $State:ty = $initial_state:expr) => {
-        __interrupt_vector! ($Name, {
+        __interrupt_vector!($Name, {
             static mut STATE: $State = $initial_state;
             let _ = $crate::Interrupt::$Name;
             let f: fn(&mut $State) = $handler;
@@ -31,7 +31,7 @@ macro_rules! interrupt {
         });
     };
     ($Name:ident, $handler:path) => {
-        __interrupt_vector! ($Name, {
+        __interrupt_vector!($Name, {
             let _ = $crate::Interrupt::$Name;
             let f: fn() = $handler;
             f()

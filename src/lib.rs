@@ -4,8 +4,8 @@
 #![allow(non_camel_case_types)]
 #![deny(missing_docs)]
 
-extern crate vcell;
 extern crate bare_metal;
+extern crate vcell;
 
 pub mod interrupt;
 
@@ -18,10 +18,12 @@ impl Peripherals {
     #[doc = r" Returns all the peripherals *once*"]
     #[inline]
     pub fn take() -> Option<Self> {
-        interrupt::free(|_| if unsafe { DEVICE_PERIPHERALS } {
-            None
-        } else {
-            Some(unsafe { Peripherals::steal() })
+        interrupt::free(|_| {
+            if unsafe { DEVICE_PERIPHERALS } {
+                None
+            } else {
+                Some(unsafe { Peripherals::steal() })
+            }
         })
     }
 }
