@@ -1,3 +1,10 @@
+# Deprecation Note:
+**This crate will soon be deprecated in favor of [`avr-device`](https://github.com/Rahix/avr-device).**
+
+The approach of generating the svd from hand-written register definitions has proven to be way to tedious to be scalable.  In `avr-device`, we base our work on atdf files provided by Atmel(Microchip).  This allows much faster growth of the list of supported devices (and peripherals).  Please head over there if you want a register-access-crate for AVR microcontrollers.
+
+---
+
 # `ATmega32U4` [![crates.io page](http://meritbadge.herokuapp.com/atmega32u4)](https://crates.io/crates/atmega32u4) [![docs.rs](https://docs.rs/atmega32u4/badge.svg)](https://docs.rs/atmega32u4)
 
 Low level access to ATmega32U4 registers.  Refer to the ATmega32U4 datasheet for more detailed information.
